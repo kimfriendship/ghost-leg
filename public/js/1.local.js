@@ -1,6 +1,6 @@
 // state
 let todos = [];
-let navState = 'all';
+let nav = 'all';
 
 // DOMs
 const $todos = document.querySelector('.todos');
