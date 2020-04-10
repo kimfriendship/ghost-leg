@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "simple-rest-api-server",
+  "builds": [
+    { "src": "server.js", "use": "@now/node-server" }
+  ],
+  "routes": [
+    { "src": "/.*", "dest": "server.js" }
+  ]
+}
