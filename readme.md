@@ -21,3 +21,8 @@ HTML
 JavaScript
 React
 CSS
+
+<br>
+<br>
+
+## [commit history](https://github.com/kimfriendship/study-react/commits/master?after=a8c490198ad5f871558779464494383b73923266+34)
