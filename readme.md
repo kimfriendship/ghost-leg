@@ -20,7 +20,7 @@
 
 ## 프로젝트 진행 과정
 
-레포지토리가 변동됨에 따라 commit history는 [여기](https://github.com/kimfriendship/study-react/commits/master?after=a8c490198ad5f871558779464494383b73923266+34)에서 확인 가능합니다.
+레포지토리가 변동 됨에 따라 commit history는 [여기](https://github.com/kimfriendship/study-react/commits/master?after=a8c490198ad5f871558779464494383b73923266+34)에서 확인 가능합니다.
 
 <br>
 <br>
