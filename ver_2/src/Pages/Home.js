@@ -1,14 +1,12 @@
 import React from "react";
-import Header from "Components/Header";
-import Counter from "Components/Counter";
-import StartButton from "Components/StartButton";
+import StartButtonContainer from "Containers/StartButtonContainer";
+import CounterContainer from "Containers/CounterContainer";
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <Counter />
-      <StartButton />
+      <CounterContainer />
+      <StartButtonContainer />
     </>
   );
 };

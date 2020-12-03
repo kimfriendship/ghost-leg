@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import CounterButton from "Components/CounterButton";
+import CounterButtonContainer from "Containers/CounterButtonContainer";
 
-const Counter = () => {
+const Counter = ({ playerCount }) => {
   return (
     <CounterWrapper>
-      <CounterButton direction="left" />
-      <Players>2</Players>
-      <CounterButton direction="right" />
+      <CounterButtonContainer direction="left" />
+      <Players>{playerCount}</Players>
+      <CounterButtonContainer direction="right" />
     </CounterWrapper>
   );
 };

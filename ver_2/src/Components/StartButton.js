@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const StartButton = () => {
-  return <Button aria-label="게임 시작">START</Button>;
+const StartButton = ({ startGame }) => {
+  return (
+    <Button aria-label="게임 시작" onClick={startGame}>
+      START
+    </Button>
+  );
 };
 
 export default StartButton;
