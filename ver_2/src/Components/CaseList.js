@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const Case = ({ idx, inputCase }) => {
@@ -12,11 +12,15 @@ const Case = ({ idx, inputCase }) => {
   );
 };
 
-const CaseList = ({ players, inputCase }) => {
+const CaseList = ({ playerCount, players, cases, isReady, inputCase }) => {
+  useEffect(() => {
+    isReady(cases, playerCount);
+  }, [cases]);
+
   return (
     <CaseListWrapper>
       {players.map((_, idx) => (
-        <Case key={idx} idx={idx} inputCase={inputCase} />
+        <Case key={idx} idx={idx} cases={cases} inputCase={inputCase} />
       ))}
     </CaseListWrapper>
   );

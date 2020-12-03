@@ -10,6 +10,13 @@ const useHook = () => {
   const enterGame = () => dispatch({ type: "ENTER_GAME" });
   const startGame = () => dispatch({ type: "START_GAME" });
 
+  const isReady = (cases, playerCount) => {
+    const values = Object.values(cases);
+    const state = values.every((value) => value.trim() !== "");
+    const caseCount = values.length === playerCount;
+    dispatch({ type: "CHECK_READY", gameState: state && caseCount });
+  };
+
   const inputCase = (e, idx) => {
     const { value } = e.target;
     dispatch({ type: "INPUT_CASE", idx, value });
@@ -34,6 +41,7 @@ const useHook = () => {
     decreasePlayers,
     enterGame,
     startGame,
+    isReady,
     inputCase,
     getRandomPlayers,
   };

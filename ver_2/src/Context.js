@@ -10,6 +10,7 @@ export const Provider = ({ children }) => {
     decreasePlayers,
     enterGame,
     startGame,
+    isReady,
     inputCase,
     getRandomPlayers,
   } = useHook();
@@ -20,6 +21,7 @@ export const Provider = ({ children }) => {
     decreasePlayers,
     enterGame,
     startGame,
+    isReady,
     inputCase,
     getRandomPlayers,
   };

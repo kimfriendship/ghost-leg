@@ -36,6 +36,11 @@ export const reducer = (state, action) => {
         ...state,
         cases: { ...state.cases, [action.idx]: action.value },
       };
+    case "CHECK_READY":
+      return {
+        ...state,
+        gameState: action.gameState ? "ready" : "setting",
+      };
     case "GET_PLAYERS":
       return {
         ...state,
