@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Game from "Pages/Game";
 import Home from "Pages/Home";
 import Result from "Pages/Result";
 import ResetStyle from "Styles/reset";
 import styled from "styled-components";
 import Header from "Components/Header";
+import { Context } from "Context";
 
-function App({ Context }) {
-  const { page } = React.useContext(Context);
+function App() {
+  const { state } = useContext(Context);
+  const { page } = state;
   return (
     <>
       <Header />

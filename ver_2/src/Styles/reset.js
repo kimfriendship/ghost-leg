@@ -137,6 +137,8 @@ button {
   cursor: pointer;
   color: #222222;
   border: none;
+  padding: 0;
+  margin: 0;
 }
 a {
   color: #222222;

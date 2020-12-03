@@ -16,7 +16,7 @@ const CounterButton = ({
     <>
       {direction === "left" ? (
         <Button
-          aria-label="플레이어 수 감소 버튼"
+          aria-label="플레이어 수 감소"
           onClick={decreasePlayers}
           disabled={playerCount <= 2}
         >
@@ -27,7 +27,7 @@ const CounterButton = ({
         </Button>
       ) : (
         <Button
-          aria-label="플레이어 수 증가 버튼"
+          aria-label="플레이어 수 증가"
           onClick={increasePlayers}
           disabled={playerCount >= 10}
         >
@@ -48,5 +48,9 @@ const Button = styled.button`
 
   &:disabled {
     cursor: not-allowed;
+  }
+
+  @media ${({ theme }) => theme.mobile} {
+    font-size: 3.5rem;
   }
 `;

@@ -6,7 +6,7 @@ const Partition = ({ gameState, playGame }) => {
     <>
       <Shade>
         {gameState === "setting" ? (
-          <SettingMessage>케이스를 입력해주세요</SettingMessage>
+          <SettingMessage>케이스를 모두 입력해주세요</SettingMessage>
         ) : (
           <StartButton aria-label="게임 시작">START</StartButton>
         )}

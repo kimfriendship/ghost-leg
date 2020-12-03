@@ -17,7 +17,10 @@ export default Counter;
 const Players = styled.span`
   font-size: 6rem;
   font-weight: 700;
-  padding: 0 5rem 0.5rem;
+
+  @media ${({ theme }) => theme.mobile} {
+    font-size: 4rem;
+  }
 `;
 
 const CounterWrapper = styled.div`
@@ -29,6 +32,6 @@ const CounterWrapper = styled.div`
 
   @media ${({ theme }) => theme.mobile} {
     margin: 25vh auto 0;
-    width: 25rem;
+    width: 20rem;
   }
 `;

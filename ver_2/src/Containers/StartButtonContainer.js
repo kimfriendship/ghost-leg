@@ -3,11 +3,11 @@ import React, { useContext } from "react";
 import { Context } from "Context";
 
 const StartButtonContainer = () => {
-  const { startGame } = useContext(Context);
+  const { enterGame } = useContext(Context);
 
   return (
     <>
-      <StartButton startGame={startGame} />
+      <StartButton enterGame={enterGame} />
     </>
   );
 };

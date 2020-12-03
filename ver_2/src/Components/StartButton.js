@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const StartButton = ({ startGame }) => {
+const StartButton = ({ enterGame }) => {
   return (
-    <Button aria-label="게임 시작" onClick={startGame}>
-      START
+    <Button aria-label="게임 입장" onClick={enterGame}>
+      ENTER
     </Button>
   );
 };
@@ -15,8 +15,8 @@ const Button = styled.button`
   background-color: rgb(255, 215, 139);
   font-size: 2.3rem;
   font-weight: 600;
-  width: 25rem;
-  height: 5rem;
+  width: 30rem;
+  height: 6rem;
   margin: 15rem auto 0;
   display: block;
   border-radius: 10px;
@@ -26,5 +26,12 @@ const Button = styled.button`
     color: white;
     background-color: orange;
     transition: 0.2s ease-in;
+  }
+
+  @media ${({ theme }) => theme.mobile} {
+    font-size: 1.5rem;
+    margin: 8rem auto 0;
+    height: 5rem;
+    width: 20rem;
   }
 `;

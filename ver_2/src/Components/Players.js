@@ -29,7 +29,6 @@ const PlayerList = styled.ul`
 `;
 
 const Player = styled.li`
-  background-color: pink;
   width: 20%;
 `;
 
@@ -41,7 +40,6 @@ const PlayerImg = styled.img`
   min-width: 4.5rem;
   max-width: 8rem;
   object-fit: cover;
-  background-color: yellow;
 
   @media ${({ theme }) => theme.mobile} {
     width: 3rem;
