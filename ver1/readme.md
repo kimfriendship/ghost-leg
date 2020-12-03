@@ -1,5 +1,9 @@
 # Ghost Leg
 
+## version 1
+
+---
+
 ![ghost-leg_playing_image](https://user-images.githubusercontent.com/60292183/94452732-d1df9d00-01ea-11eb-938a-09f377f53a15.gif)
 
 <br>
