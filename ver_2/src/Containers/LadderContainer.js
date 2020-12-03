@@ -4,13 +4,13 @@ import { Context } from "Context";
 import Partition from "Components/Partition";
 
 const LadderContainer = () => {
-  const { state, playGame } = useContext(Context);
+  const { state, startGame } = useContext(Context);
   const { players, gameState } = state;
 
   return (
     <>
-      {gameState === "setting" || "ready" ? (
-        <Partition gameState={gameState} playGame={playGame} />
+      {gameState === "setting" || gameState === "ready" ? (
+        <Partition gameState={gameState} startGame={startGame} />
       ) : (
         <Ladder players={players} gameState={gameState} />
       )}

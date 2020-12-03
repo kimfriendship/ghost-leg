@@ -1,18 +1,26 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const Case = ({ idx, inputCase }) => {
+const Case = ({ idx, gameState, inputCase }) => {
   return (
     <CaseWrapper>
       <CaseInput
         placeholder={`case ${idx + 1}`}
+        gameState={gameState}
         onChange={(e) => inputCase(e, idx)}
       />
     </CaseWrapper>
   );
 };
 
-const CaseList = ({ playerCount, players, cases, isReady, inputCase }) => {
+const CaseList = ({
+  playerCount,
+  players,
+  gameState,
+  cases,
+  isReady,
+  inputCase,
+}) => {
   useEffect(() => {
     isReady(cases, playerCount);
   }, [cases]);
@@ -20,7 +28,7 @@ const CaseList = ({ playerCount, players, cases, isReady, inputCase }) => {
   return (
     <CaseListWrapper>
       {players.map((_, idx) => (
-        <Case key={idx} idx={idx} cases={cases} inputCase={inputCase} />
+        <Case key={idx} idx={idx} gameState={gameState} inputCase={inputCase} />
       ))}
     </CaseListWrapper>
   );
@@ -51,6 +59,13 @@ const CaseInput = styled.input`
   border-radius: 5px;
   font-size: 1.6rem;
   text-align: center;
+
+  ${({ gameState }) =>
+    gameState === "playing" &&
+    css`
+      color: white;
+      background-color: cornflowerblue;
+    `}
 
   &::placeholder {
     text-align: center;

@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-const Partition = ({ gameState, playGame }) => {
+const Partition = ({ gameState, startGame }) => {
   return (
     <>
       <Shade>
         {gameState === "setting" ? (
           <SettingMessage>케이스를 모두 입력해주세요</SettingMessage>
         ) : (
-          <StartButton aria-label="게임 시작">START</StartButton>
+          <StartButton aria-label="게임 시작" onClick={startGame}>
+            START
+          </StartButton>
         )}
       </Shade>
     </>
@@ -58,6 +60,7 @@ const Shade = styled.div`
   background-color: lightgoldenrodyellow;
 
   @media ${({ theme }) => theme.mobile} {
+    width: 100%;
     height: 12rem;
     margin: 1rem auto;
   }
