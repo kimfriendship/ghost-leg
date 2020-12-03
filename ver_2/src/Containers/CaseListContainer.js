@@ -4,10 +4,10 @@ import { Context } from "Context";
 import CaseList from "Components/CaseList";
 
 const CaseListContainer = () => {
-  const { state } = useContext(Context);
-  const { players } = state;
+  const { state, inputCase } = useContext(Context);
+  const { players, cases } = state;
 
-  return <CaseList players={players} />;
+  return <CaseList players={players} cases={cases} inputCase={inputCase} />;
 };
 
 export default CaseListContainer;

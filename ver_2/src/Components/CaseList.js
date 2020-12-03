@@ -1,19 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-const Case = ({ idx }) => {
+const Case = ({ idx, inputCase }) => {
   return (
     <CaseWrapper>
-      <CaseInput placeholder={`case ${idx + 1}`} />
+      <CaseInput
+        placeholder={`case ${idx + 1}`}
+        onChange={(e) => inputCase(e, idx)}
+      />
     </CaseWrapper>
   );
 };
 
-const CaseList = ({ players }) => {
+const CaseList = ({ players, inputCase }) => {
   return (
     <CaseListWrapper>
       {players.map((_, idx) => (
-        <Case key={idx} idx={idx} />
+        <Case key={idx} idx={idx} inputCase={inputCase} />
       ))}
     </CaseListWrapper>
   );
@@ -26,7 +29,6 @@ const CaseListWrapper = styled.ul`
   justify-content: space-around;
   margin: 0 auto;
   width: 80%;
-  background-color: pink;
 
   @media ${({ theme }) => theme.mobile} {
     width: 100%;
@@ -35,7 +37,6 @@ const CaseListWrapper = styled.ul`
 
 const CaseWrapper = styled.li`
   width: 20%;
-  background-color: wheat;
   padding: 0 0.5%;
 `;
 
