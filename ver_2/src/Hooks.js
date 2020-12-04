@@ -17,6 +17,12 @@ const useHook = () => {
     dispatch({ type: "CHECK_READY", gameState: state && caseCount });
   };
 
+  const resetCase = (playerCount) => {
+    const cases = {};
+    for (let i = 0; i < playerCount; i++) cases[i] = "";
+    dispatch({ type: "RESET_CASE", cases });
+  };
+
   const inputCase = (e, idx) => {
     const { value } = e.target;
     dispatch({ type: "INPUT_CASE", idx, value });
@@ -35,6 +41,10 @@ const useHook = () => {
     dispatch({ type: "GET_PLAYERS", players: [...players] });
   };
 
+  const goHome = () => dispatch({ type: "GO_HOME" });
+  const goResult = () => dispatch({ type: "GO_RESULT" });
+  const goGame = () => dispatch({ type: "GO_GAME" });
+
   return {
     state,
     increasePlayers,
@@ -42,8 +52,12 @@ const useHook = () => {
     enterGame,
     startGame,
     isReady,
+    resetCase,
     inputCase,
     getRandomPlayers,
+    goHome,
+    goResult,
+    goGame,
   };
 };
 

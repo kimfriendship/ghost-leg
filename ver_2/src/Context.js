@@ -11,8 +11,12 @@ export const Provider = ({ children }) => {
     enterGame,
     startGame,
     isReady,
+    resetCase,
     inputCase,
     getRandomPlayers,
+    goHome,
+    goResult,
+    goGame,
   } = useHook();
 
   const contextValue = {
@@ -22,8 +26,12 @@ export const Provider = ({ children }) => {
     enterGame,
     startGame,
     isReady,
+    resetCase,
     inputCase,
     getRandomPlayers,
+    goHome,
+    goResult,
+    goGame,
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;

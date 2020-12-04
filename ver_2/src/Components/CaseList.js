@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 
-const Case = ({ idx, gameState, inputCase }) => {
+const Case = ({ idx, value, gameState, inputCase }) => {
   return (
     <CaseWrapper>
       <CaseInput
         placeholder={`case ${idx + 1}`}
         gameState={gameState}
         onChange={(e) => inputCase(e, idx)}
+        value={value}
       />
     </CaseWrapper>
   );
@@ -28,7 +29,13 @@ const CaseList = ({
   return (
     <CaseListWrapper>
       {players.map((_, idx) => (
-        <Case key={idx} idx={idx} gameState={gameState} inputCase={inputCase} />
+        <Case
+          key={idx}
+          idx={idx}
+          value={cases[idx]}
+          gameState={gameState}
+          inputCase={inputCase}
+        />
       ))}
     </CaseListWrapper>
   );

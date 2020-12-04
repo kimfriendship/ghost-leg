@@ -31,6 +31,11 @@ export const reducer = (state, action) => {
         ...state,
         gameState: "playing",
       };
+    case "RESET_CASE":
+      return {
+        ...state,
+        cases: action.cases,
+      };
     case "INPUT_CASE":
       return {
         ...state,
@@ -45,6 +50,24 @@ export const reducer = (state, action) => {
       return {
         ...state,
         players: action.players,
+      };
+    case "GO_HOME":
+      return {
+        ...state,
+        page: "home",
+        gameState: "setting",
+      };
+    case "GO_RESULT":
+      return {
+        ...state,
+        page: "result",
+      };
+    case "GO_GAME":
+      return {
+        ...state,
+        page: "game",
+        gameState: "setting",
+        cases: {},
       };
     default:
       throw new Error("Unhandled action type");
