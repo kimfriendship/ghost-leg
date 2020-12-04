@@ -5,7 +5,7 @@ import Partition from "Components/Partition";
 
 const LadderContainer = () => {
   const { state, startGame, getRandomLegs } = useContext(Context);
-  const { legs, players, playerCount, gameState } = state;
+  const { legs, playerCount, gameState } = state;
 
   useEffect(() => {
     if (gameState === "setting") getRandomLegs(playerCount);
@@ -16,7 +16,7 @@ const LadderContainer = () => {
       {gameState === "setting" || gameState === "ready" ? (
         <Partition gameState={gameState} startGame={startGame} />
       ) : (
-        <Ladder legs={legs} players={players} gameState={gameState} />
+        <Ladder legs={legs} playerCount={playerCount} gameState={gameState} />
       )}
     </>
   );
