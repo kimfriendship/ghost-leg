@@ -15,10 +15,11 @@ export default SubButton;
 
 const Button = styled.button`
   padding: 1rem;
+  margin-bottom: 1rem;
   font-size: 1.6rem;
   transition: 0.2s ease-in;
-  background-color: pink;
-  width: 15rem;
+  /* background-color: pink; */
+  width: 14rem;
   text-align: right;
 
   &:hover {

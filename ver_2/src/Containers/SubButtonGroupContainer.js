@@ -1,8 +1,20 @@
 import SubButtonGroup from "Components/SubButtonGroup";
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "Context";
 
 const SubButtonGroupContainer = () => {
-  return <SubButtonGroup />;
+  const { state, goHome, goResult, goGame } = useContext(Context);
+  const { gameState, page } = state;
+
+  return (
+    <SubButtonGroup
+      gameState={gameState}
+      page={page}
+      goHome={goHome}
+      goResult={goResult}
+      goGame={goGame}
+    />
+  );
 };
 
 export default SubButtonGroupContainer;

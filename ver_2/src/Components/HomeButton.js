@@ -1,9 +1,14 @@
 import React from "react";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 import SubButton from "./SubButton";
 
-const HomeButton = () => {
-  return <SubButton text="처음으로" icon={faArrowLeft} />;
+const HomeButton = ({ gameState, page, goHome }) => {
+  if (
+    (page === "game" && (gameState === "setting" || gameState === "ready")) ||
+    page === "result"
+  )
+    return <SubButton text="처음으로" icon={faHome} event={goHome} />;
+  else return null;
 };
 
 export default HomeButton;

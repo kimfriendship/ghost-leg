@@ -1,7 +1,12 @@
+import SubButtonGroupContainer from "Containers/SubButtonGroupContainer";
 import React from "react";
 
 const Result = () => {
-  return <div></div>;
+  return (
+    <>
+      <SubButtonGroupContainer />
+    </>
+  );
 };
 
 export default Result;
