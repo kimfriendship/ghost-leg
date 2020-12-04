@@ -11,4 +11,4 @@ const HomeButton = ({ gameState, page, goHome }) => {
   else return null;
 };
 
-export default HomeButton;
+export default React.memo(HomeButton);

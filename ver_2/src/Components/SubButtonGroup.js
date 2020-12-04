@@ -14,7 +14,7 @@ const SubButtonGroup = ({ gameState, page, goHome, goResult, goGame }) => {
   );
 };
 
-export default SubButtonGroup;
+export default React.memo(SubButtonGroup);
 
 const Wrapper = styled.div`
   display: flex;

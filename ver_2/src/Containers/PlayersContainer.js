@@ -15,3 +15,4 @@ const PlayersContainer = () => {
 };
 
 export default PlayersContainer;
+// export default React.memo(PlayersContainer);

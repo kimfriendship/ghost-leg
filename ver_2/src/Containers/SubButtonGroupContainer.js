@@ -17,4 +17,4 @@ const SubButtonGroupContainer = () => {
   );
 };
 
-export default SubButtonGroupContainer;
+export default React.memo(SubButtonGroupContainer);

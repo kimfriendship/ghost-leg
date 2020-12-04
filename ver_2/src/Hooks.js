@@ -46,22 +46,30 @@ const useHook = () => {
     const legs = [];
     let rows = new Set();
     let column = 0;
+    let test = 0;
 
-    for (let i = 0; i < playerCount; i++) legCounts.push(getRandomNumber(2, 8));
+    for (let i = 1; i < playerCount; i++) legCounts.push(getRandomNumber(2, 5));
 
-    while (column < playerCount) {
-      if (rows.size === legCounts[column] - 1) {
+    while (column < playerCount - 1) {
+      if (rows.size === legCounts[column]) {
         legs.push([...rows]);
         rows = new Set();
         column++;
       }
 
-      const num = getRandomNumber(1, 16);
+      test++;
+      console.log("ladddddddder", test);
+      if (test > 1000) break;
+
+      const num = getRandomNumber(0, 9);
       if (column < 1) rows.add(num);
       else {
-        const duplicates = legs[column - 1].filter((leg) => leg === num);
-        if (duplicates.length) rows.add(num);
+        const isDuplicate = legs[column - 1].includes(num);
+        if (!isDuplicate) rows.add(num);
       }
+
+      console.log("column, num, rows, legCounts");
+      console.log(column, num, rows, legCounts);
     }
 
     dispatch({ type: "GET_LEGS", legs });

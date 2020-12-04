@@ -13,7 +13,8 @@ const Players = ({ players }) => {
   );
 };
 
-export default Players;
+// export default Players;
+export default React.memo(Players);
 
 const PlayerList = styled.ul`
   display: flex;
@@ -25,7 +26,7 @@ const PlayerList = styled.ul`
 
   @media ${({ theme }) => theme.mobile} {
     width: 100%;
-    padding-top: 6rem;
+    padding-top: 7rem;
   }
 `;
 

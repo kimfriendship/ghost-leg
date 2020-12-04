@@ -11,7 +11,7 @@ const SubButton = ({ text, icon, label, event }) => {
   );
 };
 
-export default SubButton;
+export default React.memo(SubButton);
 
 const Button = styled.button`
   padding: 1rem;

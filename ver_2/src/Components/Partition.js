@@ -17,7 +17,7 @@ const Partition = ({ gameState, startGame }) => {
   );
 };
 
-export default Partition;
+export default React.memo(Partition);
 
 const StartButton = styled.button`
   font-size: 5rem;
