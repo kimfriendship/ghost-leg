@@ -1,19 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-const LadderStick = () => {
-  return <Stick />;
-};
-
-const LegStick = () => {
-  return <Leg />;
+const LadderTable = ({ count }) => {
+  return (
+    <Body count={count}>
+      <Column>
+        {Array.from({ length: 8 }).map((_, idx) => (
+          <Row key={idx} />
+        ))}
+      </Column>
+    </Body>
+  );
 };
 
 const Ladder = ({ players, legs }) => {
   return (
     <LadderWrapper>
-      {players.map((_, idx) => (
-        <LadderStick key={idx} />
+      {Array.from({ length: players.length - 1 }).map((_, idx) => (
+        <LadderTable key={idx} count={players.length} />
       ))}
     </LadderWrapper>
   );
@@ -21,33 +25,31 @@ const Ladder = ({ players, legs }) => {
 
 export default Ladder;
 
-const Stick = styled.div`
-  width: 0.8rem;
-  height: 40rem;
-  margin: 1rem 0;
-  background-color: black;
-
-  @media ${({ theme }) => theme.mobile} {
-    width: 0.5rem;
-    height: 10rem;
-  }
+const Body = styled.tbody`
+  width: ${({ count }) => `calc(100% / ${count})`};
+  border-left: 3px solid black;
+  border-right: 3px solid black;
 `;
 
-const Leg = styled.div`
-  height: 0.8rem;
-
-  @media ${({ theme }) => theme.mobile} {
-    height: 0.5rem;
-  }
+const Column = styled.tr`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 `;
 
-const LadderWrapper = styled.div`
+const Row = styled.td`
+  background-color: lightgreen;
+  height: 12.5%;
+`;
+
+const LadderWrapper = styled.table`
   width: 80%;
   height: 42rem;
   margin: 2rem auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  background-color: pink;
 
   @media ${({ theme }) => theme.mobile} {
     width: 100%;
