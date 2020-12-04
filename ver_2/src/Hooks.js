@@ -46,7 +46,6 @@ const useHook = () => {
     const legs = [];
     let rows = new Set();
     let column = 0;
-    let test = 0;
 
     for (let i = 1; i < playerCount; i++) legCounts.push(getRandomNumber(2, 5));
 
@@ -57,19 +56,12 @@ const useHook = () => {
         column++;
       }
 
-      test++;
-      console.log("ladddddddder", test);
-      if (test > 1000) break;
-
       const num = getRandomNumber(0, 9);
       if (column < 1) rows.add(num);
       else {
         const isDuplicate = legs[column - 1].includes(num);
         if (!isDuplicate) rows.add(num);
       }
-
-      console.log("column, num, rows, legCounts");
-      console.log(column, num, rows, legCounts);
     }
 
     dispatch({ type: "GET_LEGS", legs });

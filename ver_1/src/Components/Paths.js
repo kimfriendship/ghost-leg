@@ -19,6 +19,8 @@ const Paths = ({ canvasRef, profile, resultsArray }) => {
   let LR = 0;
   let LC = 0;
 
+  console.log("pahts=====", canvas, ctx);
+
   const drawBalls = (p) => {
     ctx.beginPath();
     ctx.arc(ballX + 1, ballY, 2, 0, Math.PI * 2);
@@ -114,6 +116,8 @@ const Paths = ({ canvasRef, profile, resultsArray }) => {
     diffX = firstX * 2;
     ballX = firstX + diffX * profile;
     LC = profile;
+
+    console.log(canvas, ctx);
 
     startDrawing = setInterval(() => drawLines(profile), 10);
     return () => clearInterval(startDrawing);

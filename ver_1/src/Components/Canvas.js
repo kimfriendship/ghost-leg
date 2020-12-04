@@ -14,6 +14,8 @@ const Canvas = () => {
   let ctx = null;
   let legGap = 15;
 
+  console.log("canvas=====", canvas, ctx);
+
   const drawLadders = () => {
     const width = canvas.width;
     const height = canvas.height;
@@ -45,6 +47,7 @@ const Canvas = () => {
   useEffect(() => {
     canvas = canvasRef.current;
     ctx = canvas.getContext("2d");
+    console.log(canvas, ctx);
     drawLadders();
   }, []);
 

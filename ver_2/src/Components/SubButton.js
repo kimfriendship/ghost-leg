@@ -14,8 +14,8 @@ const SubButton = ({ text, icon, label, event }) => {
 export default React.memo(SubButton);
 
 const Button = styled.button`
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: 1.6rem;
   transition: 0.2s ease-in;
   width: 14rem;

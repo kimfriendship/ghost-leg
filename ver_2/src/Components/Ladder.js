@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const LadderTable = ({ playerCount, legs, nth }) => {
-  console.log("nth, legs", nth, legs);
   return (
     <Body
       playerCount={playerCount}
@@ -67,6 +66,8 @@ const Row = styled.td`
 `;
 
 const LadderWrapper = styled.table`
+  /* background-color: seagreen;
+  opacity: 0.4; */
   width: 80%;
   height: 42rem;
   margin: 2rem auto;
