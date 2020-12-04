@@ -51,6 +51,11 @@ export const reducer = (state, action) => {
         ...state,
         players: action.players,
       };
+    case "GET_LEGS":
+      return {
+        ...state,
+        legs: action.legs,
+      };
     case "GO_HOME":
       return {
         ...state,
@@ -67,7 +72,6 @@ export const reducer = (state, action) => {
         ...state,
         page: "game",
         gameState: "setting",
-        cases: {},
       };
     default:
       throw new Error("Unhandled action type");

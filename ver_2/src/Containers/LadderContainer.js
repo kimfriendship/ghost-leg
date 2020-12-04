@@ -1,18 +1,22 @@
 import Ladder from "Components/Ladder";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "Context";
 import Partition from "Components/Partition";
 
 const LadderContainer = () => {
-  const { state, startGame } = useContext(Context);
-  const { players, gameState } = state;
+  const { state, startGame, getRandomLegs } = useContext(Context);
+  const { legs, players, playerCount, gameState } = state;
+
+  useEffect(() => {
+    if (gameState === "setting") getRandomLegs(playerCount);
+  }, [gameState]);
 
   return (
     <>
       {gameState === "setting" || gameState === "ready" ? (
         <Partition gameState={gameState} startGame={startGame} />
       ) : (
-        <Ladder players={players} gameState={gameState} />
+        <Ladder legs={legs} players={players} gameState={gameState} />
       )}
     </>
   );

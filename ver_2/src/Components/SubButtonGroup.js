@@ -8,8 +8,8 @@ const SubButtonGroup = ({ gameState, page, goHome, goResult, goGame }) => {
   return (
     <Wrapper>
       <HomeButton gameState={gameState} page={page} goHome={goHome} />
-      <ResultButton gameState={gameState} page={page} goResult={goResult} />
       <RestartButton gameState={gameState} page={page} goGame={goGame} />
+      <ResultButton gameState={gameState} page={page} goResult={goResult} />
     </Wrapper>
   );
 };
@@ -21,5 +21,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   margin-right: 10%;
-  margin-top: 5rem;
+  margin-top: 7rem;
+
+  @media ${({ theme }) => theme.mobile} {
+    position: absolute;
+    margin: 0;
+    top: 0.5rem;
+    right: 0.8rem;
+  }
 `;

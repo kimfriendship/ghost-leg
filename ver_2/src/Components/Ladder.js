@@ -5,7 +5,11 @@ const LadderStick = () => {
   return <Stick />;
 };
 
-const Ladder = ({ players, gameState }) => {
+const LegStick = () => {
+  return <Leg />;
+};
+
+const Ladder = ({ players, legs }) => {
   return (
     <LadderWrapper>
       {players.map((_, idx) => (
@@ -26,6 +30,14 @@ const Stick = styled.div`
   @media ${({ theme }) => theme.mobile} {
     width: 0.5rem;
     height: 10rem;
+  }
+`;
+
+const Leg = styled.div`
+  height: 0.8rem;
+
+  @media ${({ theme }) => theme.mobile} {
+    height: 0.5rem;
   }
 `;
 

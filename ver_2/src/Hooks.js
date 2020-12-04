@@ -41,6 +41,12 @@ const useHook = () => {
     dispatch({ type: "GET_PLAYERS", players: [...players] });
   };
 
+  const getRandomLegs = (playerCount) => {
+    const legs = [];
+    for (let i = 0; i < playerCount; i++) legs.push(getRandomNumber(1, 10));
+    dispatch({ type: "GET_LEGS", legs });
+  };
+
   const goHome = () => dispatch({ type: "GO_HOME" });
   const goResult = () => dispatch({ type: "GO_RESULT" });
   const goGame = () => dispatch({ type: "GO_GAME" });
@@ -55,6 +61,7 @@ const useHook = () => {
     resetCase,
     inputCase,
     getRandomPlayers,
+    getRandomLegs,
     goHome,
     goResult,
     goGame,

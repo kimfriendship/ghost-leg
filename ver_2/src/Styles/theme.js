@@ -1,5 +1,5 @@
 const theme = {
-  mobile: "screen and (max-width: 640px)",
+  mobile: "screen and (max-width: 812px)",
 };
 
 export default theme;

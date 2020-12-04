@@ -25,4 +25,5 @@ export default App;
 
 const Main = styled.main`
   width: 100vw;
+  position: relative;
 `;

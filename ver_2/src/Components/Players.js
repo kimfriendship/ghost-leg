@@ -19,12 +19,13 @@ const PlayerList = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 8rem auto 0;
+  margin: 0 auto;
+  padding-top: 8rem;
   width: 80%;
 
   @media ${({ theme }) => theme.mobile} {
     width: 100%;
-    margin: 2rem auto 0;
+    padding-top: 6rem;
   }
 `;
 

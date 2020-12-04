@@ -18,7 +18,6 @@ const Button = styled.button`
   margin-bottom: 1rem;
   font-size: 1.6rem;
   transition: 0.2s ease-in;
-  /* background-color: pink; */
   width: 14rem;
   text-align: right;
 
@@ -26,10 +25,17 @@ const Button = styled.button`
     transition: 0.2s ease-in;
     transform: scale(1.1);
   }
+
+  @media ${({ theme }) => theme.mobile} {
+    font-size: 1.4rem;
+    width: 13rem;
+    padding: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
 `;
 
 const Text = styled.span`
   color: darkslategrey;
-  font-size: 1.6rem;
+  font-size: inherit;
   margin-right: 1rem;
 `;

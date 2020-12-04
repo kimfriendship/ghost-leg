@@ -1,4 +1,3 @@
-import Case from "Components/CaseList";
 import React, { useContext, useEffect } from "react";
 import { Context } from "Context";
 import CaseList from "Components/CaseList";
