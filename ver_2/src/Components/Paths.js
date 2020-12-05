@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Paths = () => {
@@ -7,4 +7,6 @@ const Paths = () => {
 
 export default Paths;
 
-const Canvas = styled.canvas``;
+const Canvas = styled.canvas`
+  /* z-index: 100; */
+`;

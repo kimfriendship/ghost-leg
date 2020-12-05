@@ -18,14 +18,14 @@ export default Canvas;
 
 const Wrapper = styled.canvas`
   background-color: lightyellow;
+  opacity: 0.5;
   position: absolute;
   display: flex;
   justify-content: space-around;
-  top: 17rem;
+  top: 18rem;
   left: 10%;
   width: 80%;
   height: 42rem;
-  z-index: -100;
 
   @media ${({ theme }) => theme.mobile} {
     width: 100%;

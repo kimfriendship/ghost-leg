@@ -13,34 +13,44 @@ const PathsContainer = ({ idx, canvasRef }) => {
   const { state } = useContext(Context);
   const { players, playerCount } = state;
   const [canvas, setCanvas] = useState(null);
+  let draw = null;
 
   const ctx = canvas && canvas.getContext("2d");
   const canvasWidth = canvas && canvas.width;
   const canvasHeight = canvas && canvas.height;
-  let gapX = canvasWidth / (playerCount * 2);
-  let gapY = canvasHeight / 10;
-  let posX =
-    idx === 0
-      ? gapX * (2 * idx + 1) + 1
-      : idx === playerCount - 1
-      ? gapX * (2 * idx + 1) - 1
-      : gapX * (2 * idx + 1);
-  let posY = gapY;
+  const viewPort = window.innerWidth > 812 ? "pc" : "mobile";
+  const radius = viewPort === "pc" ? 2 : 1.5;
+  const gapX = canvasWidth / (playerCount * 2);
+  const gapY = canvasHeight / 10;
+  const diff = gapX * (2 * idx + 1);
+  let posX = idx === 0 ? diff + 1 : idx === playerCount - 1 ? diff - 1 : diff;
+  let posY = 0;
 
-  console.log(idx, canvasWidth, canvasHeight, posX, gapY);
-
-  const drawPath = () => {
+  const drawFootprint = () => {
     ctx.beginPath();
-    ctx.arc(posX, posY, 2, 0, Math.PI * 5);
+    ctx.arc(posX, posY, radius, 0, Math.PI * 10);
     ctx.fillStyle = players[idx].color;
     ctx.fill();
     ctx.closePath();
   };
 
+  const drawPath = () => {
+    if (posY === canvasHeight) {
+      clearInterval(draw);
+      return;
+    }
+
+    const needChecking = !(posY % gapY);
+    if (needChecking) console.log(posY);
+
+    posY += radius;
+
+    drawFootprint();
+  };
+
   useEffect(() => {
     setCanvas(canvasRef.current);
-    canvas && drawPath();
-    console.log(canvasRef);
+    if (canvas) draw = setInterval(() => drawPath(), 30);
   }, [canvasRef, canvas]);
 
   return <Paths />;
