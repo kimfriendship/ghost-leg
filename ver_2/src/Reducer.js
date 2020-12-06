@@ -5,7 +5,7 @@ export const initState = {
   cases: {},
   results: [],
   gameState: "setting",
-  ladder: [],
+  ladderPos: 0,
   legs: [],
 };
 
@@ -72,6 +72,17 @@ export const reducer = (state, action) => {
         ...state,
         page: "game",
         gameState: "setting",
+      };
+    case "GET_LADDER_POS":
+      return {
+        ...state,
+        ladderPos: action.pos,
+      };
+    case "GET_RESULT":
+      return {
+        ...state,
+        gameState: "done",
+        results: { ...state.results, [action.idx]: action.result },
       };
     default:
       throw new Error("Unhandled action type");

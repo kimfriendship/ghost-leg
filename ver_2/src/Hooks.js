@@ -51,7 +51,7 @@ const useHook = () => {
 
     while (column < playerCount - 1) {
       if (rows.size === legCounts[column]) {
-        legs.push([...rows]);
+        legs.push([...rows].sort());
         rows = new Set();
         column++;
       }
@@ -71,6 +71,10 @@ const useHook = () => {
   const goResult = () => dispatch({ type: "GO_RESULT" });
   const goGame = () => dispatch({ type: "GO_GAME" });
 
+  const getLadderPos = (pos) => dispatch({ type: "GET_LADDER_POS", pos });
+  const getResult = (idx, result) =>
+    dispatch({ type: "GET_RESULT", idx, result });
+
   return {
     state,
     increasePlayers,
@@ -85,6 +89,8 @@ const useHook = () => {
     goHome,
     goResult,
     goGame,
+    getLadderPos,
+    getResult,
   };
 };
 

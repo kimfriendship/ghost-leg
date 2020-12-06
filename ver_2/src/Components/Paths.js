@@ -7,6 +7,4 @@ const Paths = () => {
 
 export default Paths;
 
-const Canvas = styled.canvas`
-  /* z-index: 100; */
-`;
+const Canvas = styled.canvas``;
