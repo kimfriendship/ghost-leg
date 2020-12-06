@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 const Case = ({ idx, value, gameState, inputCase, resultColor }) => {
   return (
     <CaseWrapper>
-      {gameState === "setting" || gameState === "ready" ? (
+      {["setting", "ready", "notReady"].includes(gameState) ? (
         <CaseInput
           placeholder={`case ${idx + 1}`}
           gameState={gameState}
@@ -21,16 +21,15 @@ const Case = ({ idx, value, gameState, inputCase, resultColor }) => {
 };
 
 const CaseList = ({
-  playerCount,
   players,
   gameState,
   results,
   cases,
-  isReady,
+  checkReady,
   inputCase,
 }) => {
   useEffect(() => {
-    isReady(cases, playerCount);
+    Object.keys(cases).length && checkReady(cases);
   }, [cases]);
 
   return (

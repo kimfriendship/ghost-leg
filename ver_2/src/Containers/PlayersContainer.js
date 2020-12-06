@@ -5,11 +5,11 @@ import { data } from "Reducer";
 
 const PlayersContainer = () => {
   const { getRandomPlayers, state } = useContext(Context);
-  const { players, playerCount } = state;
+  const { players, playerCount, gameState } = state;
 
   useEffect(() => {
-    getRandomPlayers(playerCount, data);
-  }, []);
+    if (gameState === "setting") getRandomPlayers(playerCount, data);
+  }, [gameState]);
 
   return <Players players={players} />;
 };

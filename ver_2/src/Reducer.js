@@ -43,7 +43,7 @@ export const reducer = (state, action) => {
     case "CHECK_READY":
       return {
         ...state,
-        gameState: action.gameState ? "ready" : "setting",
+        gameState: action.isReady ? "ready" : "notReady",
       };
     case "GET_PLAYERS":
       return {
@@ -65,6 +65,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         page: "result",
+        gameState: "setting",
       };
     case "GO_GAME":
       return {
@@ -75,7 +76,7 @@ export const reducer = (state, action) => {
     case "UPDATE_RESULT":
       return {
         ...state,
-        gameState: Object.keys(state.results).length + 1 ? "done" : "playing",
+        gameState: "done",
         results: { ...state.results, [action.idx]: action.posX },
       };
     default:

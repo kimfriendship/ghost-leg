@@ -3,7 +3,7 @@ import { Context } from "Context";
 import CaseList from "Components/CaseList";
 
 const CaseListContainer = () => {
-  const { state, isReady, resetCase, inputCase } = useContext(Context);
+  const { state, checkReady, resetCase, inputCase } = useContext(Context);
   const { players, playerCount, cases, gameState, results } = state;
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const CaseListContainer = () => {
       cases={cases}
       results={results}
       gameState={gameState}
-      isReady={isReady}
+      checkReady={checkReady}
       inputCase={inputCase}
     />
   );

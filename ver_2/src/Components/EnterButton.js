@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StartButton = ({ enterGame }) => {
+const EnterButton = ({ enterGame }) => {
   return (
     <Button aria-label="게임 입장" onClick={enterGame}>
       ENTER
@@ -9,7 +9,7 @@ const StartButton = ({ enterGame }) => {
   );
 };
 
-export default StartButton;
+export default EnterButton;
 
 const Button = styled.button`
   background-color: rgb(255, 215, 139);

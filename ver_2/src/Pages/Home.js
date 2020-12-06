@@ -1,12 +1,12 @@
 import React from "react";
-import StartButtonContainer from "Containers/StartButtonContainer";
+import EnterButtonContainer from "Containers/EnterButtonContainer";
 import CounterContainer from "Containers/CounterContainer";
 
 const Home = () => {
   return (
     <>
       <CounterContainer />
-      <StartButtonContainer />
+      <EnterButtonContainer />
     </>
   );
 };

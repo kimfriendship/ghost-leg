@@ -1,12 +1,12 @@
 import Ladder from "Components/Ladder";
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "Context";
 import Partition from "Components/Partition";
 import CanvasContainer from "./CanvasContainer";
 import LadderCanvasWrapper from "Components/LadderCanvasWrapper";
 
 const LadderContainer = () => {
-  const { state, startGame, getRandomLegs, getLadderPos } = useContext(Context);
+  const { state, startGame, getRandomLegs } = useContext(Context);
   const { legs, playerCount, gameState } = state;
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const LadderContainer = () => {
 
   return (
     <>
-      {gameState === "setting" || gameState === "ready" ? (
+      {["setting", "ready", "notReady"].includes(gameState) ? (
         <Partition gameState={gameState} startGame={startGame} />
       ) : (
         <LadderCanvasWrapper>

@@ -81,6 +81,8 @@ const PathsContainer = ({ idx, canvasRef }) => {
   useEffect(() => {
     setCanvas(canvasRef.current);
     if (canvas) draw = setInterval(() => drawPath(), 1);
+
+    return () => clearInterval(draw);
   }, [canvasRef, canvas]);
 
   return <Paths />;
