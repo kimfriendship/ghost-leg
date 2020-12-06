@@ -1,12 +1,10 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import styled from "styled-components";
 
-const Partition = forwardRef((props, ref) => {
-  const { gameState, startGame } = props;
-
+const Partition = ({ gameState, startGame }) => {
   return (
     <>
-      <Shade ref={ref}>
+      <Shade>
         {gameState === "setting" ? (
           <SettingMessage>케이스를 모두 입력해주세요</SettingMessage>
         ) : (
@@ -17,7 +15,7 @@ const Partition = forwardRef((props, ref) => {
       </Shade>
     </>
   );
-});
+};
 
 export default React.memo(Partition);
 

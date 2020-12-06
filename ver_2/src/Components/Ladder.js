@@ -66,17 +66,8 @@ const Row = styled.td`
 `;
 
 const LadderWrapper = styled.table`
-  /* background-color: seagreen;
-  opacity: 0.4; */
-  width: 80%;
-  height: 42rem;
-  margin: 2rem auto;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
-
-  @media ${({ theme }) => theme.mobile} {
-    width: 100%;
-    height: 12rem;
-    margin: 1rem auto;
-  }
 `;

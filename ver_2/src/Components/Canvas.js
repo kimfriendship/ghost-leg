@@ -18,17 +18,8 @@ export default Canvas;
 
 const Wrapper = styled.canvas`
   position: absolute;
-  display: flex;
-  justify-content: space-around;
-  top: ${({ top }) => `${top}px`};
-  left: 10%;
-  width: 80%;
-  height: 42rem;
-
-  @media ${({ theme }) => theme.mobile} {
-    width: 100%;
-    height: 12rem;
-    top: 12.5rem;
-    left: 0;
-  }
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;
