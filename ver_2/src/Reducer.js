@@ -89,13 +89,13 @@ export const data = [
     id: 1,
     name: "토끼",
     src: "https://image.flaticon.com/icons/svg/3069/3069187.svg",
-    color: "lightgray",
+    color: "palevioletred",
   },
   {
     id: 2,
     name: "돼지",
     src: "https://image.flaticon.com/icons/svg/3069/3069273.svg",
-    color: "lightpink",
+    color: "crimson",
   },
   {
     id: 3,
@@ -113,7 +113,7 @@ export const data = [
     id: 5,
     name: "강아지",
     src: "https://image.flaticon.com/icons/svg/3069/3069267.svg",
-    color: "sandybrown",
+    color: "peru",
   },
   {
     id: 6,
@@ -125,7 +125,7 @@ export const data = [
     id: 7,
     name: "돌고래",
     src: "https://image.flaticon.com/icons/svg/3069/3069269.svg",
-    color: "steelblue",
+    color: "royalblue",
   },
   {
     id: 8,
@@ -143,6 +143,6 @@ export const data = [
     id: 10,
     name: "코끼리",
     src: "https://image.flaticon.com/icons/svg/3069/3069224.svg",
-    color: "lightsteelblue",
+    color: "darkblue",
   },
 ];
