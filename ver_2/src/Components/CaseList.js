@@ -95,12 +95,19 @@ const CaseInput = styled.input`
   }
 `;
 
-const CaseBox = styled.div`
+const CaseBox = styled.span`
   ${caseStyle};
   color: white;
   background-color: ${({ resultColor }) => resultColor || "cornflowerblue"};
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 1rem;
+  line-height: 4rem;
+
+  @media ${({ theme }) => theme.mobile} {
+    line-height: 3rem;
+  }
 `;

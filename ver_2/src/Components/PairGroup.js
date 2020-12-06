@@ -64,6 +64,9 @@ const Case = styled.span`
   padding: 0 2rem;
   margin-left: 2rem;
   border-radius: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   @media ${({ theme }) => theme.mobile} {
     width: 50%;
