@@ -17,7 +17,7 @@ const PairGroup = ({ results, players, cases }) => {
 export default PairGroup;
 
 const Wrapper = styled.ul`
-  width: 80%;
+  width: 70%;
   margin: 5rem auto 0;
   display: flex;
   justify-content: space-between;
@@ -30,7 +30,7 @@ const Wrapper = styled.ul`
 
 const Pair = styled.li`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 50%;
   padding: 1rem 3rem;
@@ -60,15 +60,16 @@ const Case = styled.span`
   width: 60%;
   height: 5rem;
   line-height: 5rem;
+  max-width: 20rem;
   padding: 0 2rem;
   margin-left: 2rem;
-  border-radius: 10px;
+  border-radius: 5px;
 
   @media ${({ theme }) => theme.mobile} {
     width: 50%;
     height: 3rem;
     line-height: 3rem;
     font-size: 1.5rem;
-    margin-left: -1rem;
+    margin-left: 1rem;
   }
 `;
