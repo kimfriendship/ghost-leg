@@ -71,8 +71,8 @@ const useHook = () => {
   const goResult = () => dispatch({ type: "GO_RESULT" });
   const goGame = () => dispatch({ type: "GO_GAME" });
 
-  const updateResult = (idx, result) =>
-    dispatch({ type: "UPDATE_RESULT", idx, result });
+  const updateResult = (idx, posX) =>
+    dispatch({ type: "UPDATE_RESULT", idx, posX });
 
   return {
     state,

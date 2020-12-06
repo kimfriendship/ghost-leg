@@ -76,7 +76,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         gameState: Object.keys(state.results).length + 1 ? "done" : "playing",
-        results: { ...state.results, [action.idx]: state.cases[action.result] },
+        results: { ...state.results, [action.idx]: action.posX },
       };
     default:
       throw new Error("Unhandled action type");

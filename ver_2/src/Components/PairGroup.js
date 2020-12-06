@@ -7,7 +7,7 @@ const PairGroup = ({ results, players, cases }) => {
       {players.map((player, idx) => (
         <Pair key={idx}>
           <Image src={player.src} alt={player.name} />
-          <Case color={player.color}>{results[idx]}</Case>
+          <Case color={player.color}>{cases[results[idx]]}</Case>
         </Pair>
       ))}
     </Wrapper>
@@ -22,6 +22,10 @@ const Wrapper = styled.ul`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media ${({ theme }) => theme.mobile} {
+    margin-top: 3rem;
+  }
 `;
 
 const Pair = styled.li`

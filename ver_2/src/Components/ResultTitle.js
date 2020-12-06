@@ -13,4 +13,9 @@ const Title = styled.h2`
   line-height: 3rem;
   margin-top: 5rem;
   text-align: center;
+
+  @media ${({ theme }) => theme.mobile} {
+    margin-top: 3rem;
+    font-size: 1.8rem;
+  }
 `;
