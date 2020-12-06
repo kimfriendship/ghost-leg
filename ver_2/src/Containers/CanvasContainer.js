@@ -1,5 +1,5 @@
 import Canvas from "Components/Canvas";
-import React, { useRef, useContext, useEffect } from "react";
+import React, { useRef, useContext } from "react";
 import { Context } from "Context";
 
 const CanvasContainer = () => {

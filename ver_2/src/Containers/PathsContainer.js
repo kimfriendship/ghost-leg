@@ -1,12 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Paths from "Components/Paths";
-import React, {
-  useRef,
-  useEffect,
-  useCallback,
-  useContext,
-  useState,
-} from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { Context } from "Context";
 
 const PathsContainer = ({ idx, canvasRef }) => {

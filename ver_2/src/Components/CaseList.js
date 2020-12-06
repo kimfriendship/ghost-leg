@@ -1,15 +1,21 @@
 import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 
-const Case = ({ idx, value, gameState, inputCase }) => {
+const Case = ({ idx, value, gameState, inputCase, resultColor }) => {
   return (
     <CaseWrapper>
-      <CaseInput
-        placeholder={`case ${idx + 1}`}
-        gameState={gameState}
-        onChange={(e) => inputCase(e, idx)}
-        value={value}
-      />
+      {gameState === "setting" || gameState === "ready" ? (
+        <CaseInput
+          placeholder={`case ${idx + 1}`}
+          gameState={gameState}
+          onChange={(e) => inputCase(e, idx)}
+          value={value}
+        />
+      ) : (
+        <CaseBox resultColor={gameState === "done" && resultColor}>
+          {value}
+        </CaseBox>
+      )}
     </CaseWrapper>
   );
 };
@@ -18,6 +24,7 @@ const CaseList = ({
   playerCount,
   players,
   gameState,
+  results,
   cases,
   isReady,
   inputCase,
@@ -35,6 +42,7 @@ const CaseList = ({
           value={cases[idx]}
           gameState={gameState}
           inputCase={inputCase}
+          resultColor={players[results[idx]].color}
         />
       ))}
     </CaseListWrapper>
@@ -59,7 +67,7 @@ const CaseWrapper = styled.li`
   padding: 0 0.5%;
 `;
 
-const CaseInput = styled.input`
+const caseStyle = css`
   height: 4rem;
   width: 100%;
   border: 2px solid cornflowerblue;
@@ -67,12 +75,14 @@ const CaseInput = styled.input`
   font-size: 1.6rem;
   text-align: center;
 
-  ${({ gameState }) =>
-    gameState === "playing" &&
-    css`
-      color: white;
-      background-color: cornflowerblue;
-    `}
+  @media ${({ theme }) => theme.mobile} {
+    height: 3rem;
+    font-size: 1.4rem;
+  }
+`;
+
+const CaseInput = styled.input`
+  ${caseStyle};
 
   &::placeholder {
     text-align: center;
@@ -80,11 +90,18 @@ const CaseInput = styled.input`
   }
 
   @media ${({ theme }) => theme.mobile} {
-    height: 3rem;
-    font-size: 1.4rem;
-
     &::placeholder {
       font-size: 1.4rem;
     }
   }
+`;
+
+const CaseBox = styled.div`
+  ${caseStyle};
+  color: white;
+  background-color: ${({ resultColor }) => resultColor || "cornflowerblue"};
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
