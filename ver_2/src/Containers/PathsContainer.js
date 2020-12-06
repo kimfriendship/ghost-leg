@@ -59,6 +59,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
       clearInterval(draw);
       updateResult(idx, posX);
       console.log(idx, "번째 플레이어 결과", posX);
+      console.log("=========");
       return;
     }
 
@@ -81,7 +82,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
 
   useEffect(() => {
     setCanvas(canvasRef.current);
-    if (canvas) draw = setInterval(() => drawPath(), 1);
+    if (canvas) draw = setInterval(() => drawPath(), 5);
 
     return () => clearInterval(draw);
   }, [canvasRef, canvas]);

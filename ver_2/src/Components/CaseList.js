@@ -12,9 +12,7 @@ const Case = ({ idx, value, gameState, inputCase, resultColor }) => {
           value={value}
         />
       ) : (
-        <CaseBox resultColor={gameState === "done" && resultColor}>
-          {value}
-        </CaseBox>
+        <CaseBox resultColor={resultColor}>{value}</CaseBox>
       )}
     </CaseWrapper>
   );
@@ -34,16 +32,22 @@ const CaseList = ({
 
   return (
     <CaseListWrapper>
-      {players.map((_, idx) => (
-        <Case
-          key={idx}
-          idx={idx}
-          value={cases[idx]}
-          gameState={gameState}
-          inputCase={inputCase}
-          resultColor={players[results[idx]] && players[results[idx]].color}
-        />
-      ))}
+      {players.map((_, idx) => {
+        let result = null;
+        for (const player in results) {
+          if (results[player] === idx) result = player;
+        }
+        return (
+          <Case
+            key={idx}
+            idx={idx}
+            value={cases[idx]}
+            gameState={gameState}
+            inputCase={inputCase}
+            resultColor={players[result] && players[result].color}
+          />
+        );
+      })}
     </CaseListWrapper>
   );
 };
