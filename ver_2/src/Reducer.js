@@ -73,11 +73,6 @@ export const reducer = (state, action) => {
         page: "game",
         gameState: "setting",
       };
-    case "GET_LADDER_POS":
-      return {
-        ...state,
-        ladderPos: action.pos,
-      };
     case "GET_RESULT":
       return {
         ...state,

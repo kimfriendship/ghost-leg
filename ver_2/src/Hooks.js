@@ -71,7 +71,6 @@ const useHook = () => {
   const goResult = () => dispatch({ type: "GO_RESULT" });
   const goGame = () => dispatch({ type: "GO_GAME" });
 
-  const getLadderPos = (pos) => dispatch({ type: "GET_LADDER_POS", pos });
   const getResult = (idx, result) =>
     dispatch({ type: "GET_RESULT", idx, result });
 
@@ -89,7 +88,6 @@ const useHook = () => {
     goHome,
     goResult,
     goGame,
-    getLadderPos,
     getResult,
   };
 };

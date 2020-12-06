@@ -18,7 +18,6 @@ export const Provider = ({ children }) => {
     goHome,
     goResult,
     goGame,
-    getLadderPos,
     getResult,
   } = useHook();
 
@@ -36,7 +35,6 @@ export const Provider = ({ children }) => {
     goHome,
     goResult,
     goGame,
-    getLadderPos,
     getResult,
   };
 
