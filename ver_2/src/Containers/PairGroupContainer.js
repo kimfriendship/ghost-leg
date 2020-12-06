@@ -4,9 +4,9 @@ import { Context } from "Context";
 
 const PairGroupContainer = () => {
   const { state } = useContext(Context);
-  const { results } = state;
+  const { results, players, cases } = state;
 
-  return <PairGroup results={results} />;
+  return <PairGroup results={results} players={players} cases={cases} />;
 };
 
 export default PairGroupContainer;

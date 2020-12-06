@@ -42,7 +42,7 @@ const CaseList = ({
           value={cases[idx]}
           gameState={gameState}
           inputCase={inputCase}
-          resultColor={players[results[idx]].color}
+          // resultColor={gameState === "done" && players[results[idx]].color}
         />
       ))}
     </CaseListWrapper>

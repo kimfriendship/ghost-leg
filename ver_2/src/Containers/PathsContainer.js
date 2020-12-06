@@ -4,7 +4,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { Context } from "Context";
 
 const PathsContainer = ({ idx, canvasRef }) => {
-  const { state, getResult } = useContext(Context);
+  const { state, updateResult } = useContext(Context);
   const { legs, players, playerCount } = state;
   const [canvas, setCanvas] = useState(null);
   let draw = null;
@@ -57,8 +57,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
 
     if (coordY === canvasHeight) {
       clearInterval(draw);
-      getResult(idx, posX);
-      console.log(idx, "플레이어의 결과", posX);
+      updateResult(idx, posX);
       return;
     }
 
@@ -81,7 +80,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
 
   useEffect(() => {
     setCanvas(canvasRef.current);
-    if (canvas) draw = setInterval(() => drawPath(), 5);
+    if (canvas) draw = setInterval(() => drawPath(), 1);
   }, [canvasRef, canvas]);
 
   return <Paths />;
