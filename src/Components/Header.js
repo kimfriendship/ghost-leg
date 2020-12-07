@@ -8,7 +8,7 @@ const Header = () => {
         <HomeLink
           aria-label="홈으로 가기"
           tabIndex="1"
-          href="http://localhost:3000/"
+          href="https://kimfriendship.github.io/ghost-leg/"
         >
           랜덤 사다리 타기
         </HomeLink>
