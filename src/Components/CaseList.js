@@ -1,29 +1,33 @@
 import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 
-const Case = React.memo(({ idx, value, gameState, inputCase, resultColor }) => {
-  return (
-    <CaseWrapper>
-      {["setting", "ready", "notReady"].includes(gameState) ? (
-        <CaseInput
-          type="text"
-          aria-label={`case ${idx + 1}`}
-          placeholder={`case ${idx + 1}`}
-          gameState={gameState}
-          onChange={(e) => inputCase(e, idx)}
-          value={value}
-          tabIndex={idx + 2}
-          autoFocus={!idx}
-        />
-      ) : (
-        <CaseBox resultColor={resultColor}>{value}</CaseBox>
-      )}
-    </CaseWrapper>
-  );
-});
+const Case = React.memo(
+  ({ idx, value, gameState, inputCase, resultColor, playerCount }) => {
+    return (
+      <CaseWrapper>
+        {["setting", "ready", "notReady"].includes(gameState) ? (
+          <CaseInput
+            type="text"
+            aria-label={`case ${idx + 1}`}
+            placeholder={`case ${idx + 1}`}
+            gameState={gameState}
+            playerCount={playerCount}
+            onChange={(e) => inputCase(e, idx)}
+            value={value}
+            tabIndex={idx + 2}
+            autoFocus={!idx}
+          />
+        ) : (
+          <CaseBox resultColor={resultColor}>{value}</CaseBox>
+        )}
+      </CaseWrapper>
+    );
+  }
+);
 
 const CaseList = ({
   players,
+  playerCount,
   gameState,
   results,
   cases,
@@ -48,6 +52,7 @@ const CaseList = ({
             value={cases[idx]}
             gameState={gameState}
             inputCase={inputCase}
+            playerCount={playerCount}
             resultColor={players[result] && players[result].color}
           />
         );
@@ -101,8 +106,15 @@ const CaseInput = styled.input`
   }
 
   @media ${({ theme }) => theme.mobile} {
+    transform: ${({ playerCount }) => playerCount > 7 && "rotate3d(90deg)"};
+    /* width: ${({ playerCount }) => playerCount > 7 && "200%"};  */
+
     &::placeholder {
       font-size: 1.4rem;
+    }
+
+    &:focus {
+      box-shadow: 0 0 1px 1px white, 0 0 1px 2px cornflowerblue;
     }
   }
 `;

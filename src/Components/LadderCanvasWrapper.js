@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 
   @media ${({ theme }) => theme.mobile} {
     width: 100%;
-    height: 12rem;
+    height: 25rem;
     margin: 1rem auto;
   }
 `;

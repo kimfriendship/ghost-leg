@@ -158,7 +158,6 @@ a {
 }
 html {
   font-size: 10px;
-  min-width: 45rem;
 }
 `;
 

@@ -12,7 +12,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
   let posY = 0;
   let isCrossing = false;
 
-  const ctx = canvas && canvas.getContext("2d");
+  const ctx = canvas && canvas.getContext("2d").scale(2, 2);
   const canvasWidth = canvas && canvas.width;
   const canvasHeight = canvas && canvas.height;
   const viewPort = window.innerWidth > 812 ? "pc" : "mobile";

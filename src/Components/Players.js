@@ -37,8 +37,8 @@ const PlayerImg = styled.img`
   display: block;
   margin: 0 auto;
   width: 70%;
-  min-height: 4.5rem;
-  min-width: 4.5rem;
+  min-height: 3rem;
+  min-width: 3rem;
   max-width: 8rem;
   object-fit: cover;
 

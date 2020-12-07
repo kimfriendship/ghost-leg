@@ -60,5 +60,10 @@ const Button = styled.button`
 
   @media ${({ theme }) => theme.mobile} {
     font-size: 3.5rem;
+    line-height: 3.5rem;
+
+    &:focus {
+      box-shadow: 0 0 1px 1px white, 0 0 1px 3px orange;
+    }
   }
 `;

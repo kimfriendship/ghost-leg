@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const SubButtonGroup = ({ gameState, page, goHome, goResult, goGame }) => {
   return (
-    <Wrapper>
+    <Wrapper gameState={gameState}>
       <HomeButton gameState={gameState} page={page} goHome={goHome} />
       <RestartButton gameState={gameState} page={page} goGame={goGame} />
       <ResultButton gameState={gameState} page={page} goResult={goResult} />
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
   @media ${({ theme }) => theme.mobile} {
     position: absolute;
     margin: 0;
-    top: 0.5rem;
-    right: 0.8rem;
+    top: ${({ gameState }) => (gameState === "result" ? "3.5rem" : "1rem")};
+    right: 1rem;
   }
 `;
