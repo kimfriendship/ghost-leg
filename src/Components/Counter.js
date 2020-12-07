@@ -31,7 +31,7 @@ const CounterWrapper = styled.div`
   align-items: center;
 
   @media ${({ theme }) => theme.mobile} {
-    margin: 25vh auto 0;
+    margin: 28vh auto 0;
     width: 20rem;
   }
 `;

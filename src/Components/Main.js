@@ -23,6 +23,7 @@ export default React.memo(Main);
 
 const Wrapper = styled.main`
   width: 100vw;
+  height: 80vh;
   position: relative;
 `;
 

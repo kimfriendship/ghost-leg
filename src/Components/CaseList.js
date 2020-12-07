@@ -4,14 +4,13 @@ import styled, { css } from "styled-components";
 const Case = React.memo(
   ({ idx, value, gameState, inputCase, resultColor, playerCount }) => {
     return (
-      <CaseWrapper>
+      <CaseWrapper playerCount={playerCount}>
         {["setting", "ready", "notReady"].includes(gameState) ? (
           <CaseInput
             type="text"
             aria-label={`case ${idx + 1}`}
             placeholder={`case ${idx + 1}`}
             gameState={gameState}
-            playerCount={playerCount}
             onChange={(e) => inputCase(e, idx)}
             value={value}
             tabIndex={idx + 2}
@@ -75,7 +74,7 @@ const CaseListWrapper = styled.ul`
 `;
 
 const CaseWrapper = styled.li`
-  width: 20%;
+  width: ${({ playerCount }) => (playerCount < 4 ? "30%" : "20%")};
   padding: 0 0.5%;
 `;
 
@@ -106,9 +105,6 @@ const CaseInput = styled.input`
   }
 
   @media ${({ theme }) => theme.mobile} {
-    transform: ${({ playerCount }) => playerCount > 7 && "rotate3d(90deg)"};
-    /* width: ${({ playerCount }) => playerCount > 7 && "200%"};  */
-
     &::placeholder {
       font-size: 1.4rem;
     }

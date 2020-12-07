@@ -25,7 +25,7 @@ const HeaderWrapper = styled.div`
   background-color: cornflowerblue;
 
   @media ${({ theme }) => theme.mobile} {
-    height: 4rem;
+    height: 6rem;
   }
 `;
 
@@ -35,7 +35,7 @@ const HeaderTitle = styled.h1`
   height: 8rem;
 
   @media ${({ theme }) => theme.mobile} {
-    height: 4rem;
+    height: 6rem;
   }
 `;
 
@@ -54,6 +54,6 @@ const HomeLink = styled.a`
   @media ${({ theme }) => theme.mobile} {
     font-size: 2rem;
     font-weight: 700;
-    line-height: 4rem;
+    line-height: 6rem;
   }
 `;

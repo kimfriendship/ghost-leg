@@ -41,9 +41,4 @@ const PlayerImg = styled.img`
   min-width: 3rem;
   max-width: 8rem;
   object-fit: cover;
-
-  @media ${({ theme }) => theme.mobile} {
-    width: 3rem;
-    height: 3rem;
-  }
 `;

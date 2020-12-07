@@ -25,8 +25,8 @@ const Wrapper = styled.ul`
   flex-wrap: wrap;
 
   @media ${({ theme }) => theme.mobile} {
-    margin-top: 7rem;
-    width: 90%;
+    margin-top: 2rem;
+    width: 100%;
   }
 `;
 
@@ -43,15 +43,14 @@ const Pair = styled.li`
 `;
 
 const Image = styled.img`
-  width: 70%;
+  width: 30%;
   max-width: 8rem;
   min-width: 4.5rem;
   min-height: 4.5rem;
   object-fit: cover;
 
   @media ${({ theme }) => theme.mobile} {
-    width: 3rem;
-    height: 3rem;
+    width: 30%;
   }
 `;
 
@@ -63,7 +62,7 @@ const Case = styled.span`
   height: 5rem;
   line-height: 5rem;
   max-width: 20rem;
-  padding: 0 2rem;
+  padding: 0 1rem;
   margin-left: 2rem;
   border-radius: 5px;
   overflow: hidden;
