@@ -10,6 +10,7 @@ const Case = ({ idx, value, gameState, inputCase, resultColor }) => {
           gameState={gameState}
           onChange={(e) => inputCase(e, idx)}
           value={value}
+          tabIndex={idx + 2}
         />
       ) : (
         <CaseBox resultColor={resultColor}>{value}</CaseBox>

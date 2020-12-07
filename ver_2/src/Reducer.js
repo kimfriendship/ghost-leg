@@ -77,7 +77,10 @@ export const reducer = (state, action) => {
     case "UPDATE_RESULT":
       return {
         ...state,
-        gameState: "done",
+        gameState:
+          Object.keys(state.results).length + 1 === state.playerCount
+            ? "done"
+            : "playing",
         results: { ...state.results, [action.idx]: action.posX },
       };
     default:

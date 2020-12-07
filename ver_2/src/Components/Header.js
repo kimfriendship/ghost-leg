@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderTitle>
-        <HomeLink href="http://localhost:3000/">랜덤 사다리 타기</HomeLink>
+        <HomeLink tabIndex="1" href="http://localhost:3000/">
+          랜덤 사다리 타기
+        </HomeLink>
       </HeaderTitle>
     </HeaderWrapper>
   );

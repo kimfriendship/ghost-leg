@@ -35,7 +35,7 @@ const Button = styled.button`
   }
 
   &:focus {
-    box-shadow: 0 0 1px 2px white, 0 0 1px 5px darkslategrey;
+    box-shadow: 0 0 1px 2px darkslategrey;
   }
 `;
 
