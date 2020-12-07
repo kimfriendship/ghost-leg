@@ -4,8 +4,12 @@ import styled from "styled-components";
 const Header = () => {
   return (
     <HeaderWrapper>
-      <HeaderTitle>
-        <HomeLink tabIndex="1" href="http://localhost:3000/">
+      <HeaderTitle aria-label="랜덤 사다리 타기 홈">
+        <HomeLink
+          aria-label="홈으로 가기"
+          tabIndex="1"
+          href="http://localhost:3000/"
+        >
           랜덤 사다리 타기
         </HomeLink>
       </HeaderTitle>

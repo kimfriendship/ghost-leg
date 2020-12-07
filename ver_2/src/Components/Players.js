@@ -6,7 +6,7 @@ const Players = ({ players }) => {
     <PlayerList>
       {players.map(({ id, name, src }) => (
         <Player key={id}>
-          <PlayerImg src={src} alt={name} />
+          <PlayerImg src={src} alt={`${name} 플레이어`} />
         </Player>
       ))}
     </PlayerList>

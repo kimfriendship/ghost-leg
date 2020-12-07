@@ -7,7 +7,14 @@ const HomeButton = ({ gameState, page, goHome }) => {
     (page === "game" && gameState !== "playing" && gameState !== "done") ||
     page === "result"
   )
-    return <SubButton text="처음으로" icon={faHome} event={goHome} />;
+    return (
+      <SubButton
+        label="홈으로 가기"
+        text="홈으로 가기"
+        icon={faHome}
+        event={goHome}
+      />
+    );
   else return null;
 };
 

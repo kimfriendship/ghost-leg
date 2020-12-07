@@ -2,9 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const SubButton = ({ text, icon, label, event }) => {
+const SubButton = ({ text, icon, label, live, event, focus }) => {
   return (
-    <Button aria-label={label} onClick={event}>
+    <Button
+      aria-label={label}
+      aria-live={live || "off"}
+      onClick={event}
+      autoFocus={focus}
+    >
       <Text>{text}</Text>
       <FontAwesomeIcon icon={icon} color="darkslategrey" />
     </Button>

@@ -6,11 +6,14 @@ const Case = ({ idx, value, gameState, inputCase, resultColor }) => {
     <CaseWrapper>
       {["setting", "ready", "notReady"].includes(gameState) ? (
         <CaseInput
+          type="text"
+          aria-label={`case ${idx + 1}`}
           placeholder={`case ${idx + 1}`}
           gameState={gameState}
           onChange={(e) => inputCase(e, idx)}
           value={value}
           tabIndex={idx + 2}
+          autoFocus={!idx}
         />
       ) : (
         <CaseBox resultColor={resultColor}>{value}</CaseBox>

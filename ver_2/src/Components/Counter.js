@@ -6,7 +6,7 @@ const Counter = ({ playerCount }) => {
   return (
     <CounterWrapper>
       <CounterButtonContainer direction="left" />
-      <Players>{playerCount}</Players>
+      <Players aria-live="assertive">{playerCount}</Players>
       <CounterButtonContainer direction="right" />
     </CounterWrapper>
   );

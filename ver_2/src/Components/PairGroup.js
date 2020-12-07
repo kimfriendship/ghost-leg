@@ -6,7 +6,7 @@ const PairGroup = ({ results, players, cases }) => {
     <Wrapper>
       {players.map((player, idx) => (
         <Pair key={idx}>
-          <Image src={player.src} alt={player.name} />
+          <Image src={player.src} alt={`${player.name} 플레이어`} />
           <Case color={player.color}>{cases[results[idx]]}</Case>
         </Pair>
       ))}

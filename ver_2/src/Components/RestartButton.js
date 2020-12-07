@@ -7,7 +7,14 @@ const RestartButton = ({ gameState, page, goGame }) => {
     (page === "game" && (gameState === "playing" || gameState === "done")) ||
     page === "result"
   )
-    return <SubButton text="다시 하기" icon={faRedo} event={goGame} />;
+    return (
+      <SubButton
+        label="게임 다시 하기"
+        text="다시 하기"
+        icon={faRedo}
+        event={goGame}
+      />
+    );
   else return null;
 };
 
