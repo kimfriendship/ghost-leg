@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Paths = () => {
-  return <Canvas />;
+  return <Canvas></Canvas>;
 };
 
 export default Paths;

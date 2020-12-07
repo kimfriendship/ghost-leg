@@ -46,7 +46,7 @@ const StartButton = styled.button`
   }
 `;
 
-const SettingMessage = styled.h2`
+const SettingMessage = styled.h3`
   font-size: 2.5rem;
   color: darkslategrey;
 

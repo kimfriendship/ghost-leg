@@ -19,7 +19,7 @@ const LadderTable = ({ playerCount, legs, nth }) => {
 
 const Ladder = ({ playerCount, legs }) => {
   return (
-    <LadderWrapper>
+    <LadderWrapper aria-hidden>
       {Array.from({ length: playerCount - 1 }).map((_, idx) => (
         <LadderTable
           key={idx}

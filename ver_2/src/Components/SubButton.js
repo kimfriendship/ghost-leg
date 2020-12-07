@@ -8,7 +8,7 @@ const SubButton = ({ text, icon, label, live, event, focus }) => {
       aria-label={label}
       aria-live={live || "off"}
       onClick={event}
-      autoFocus={focus}
+      autoFocus={focus || false}
     >
       <Text>{text}</Text>
       <FontAwesomeIcon icon={icon} color="darkslategrey" />

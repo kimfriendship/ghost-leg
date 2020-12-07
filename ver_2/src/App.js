@@ -1,29 +1,16 @@
-import React, { useContext } from "react";
-import Game from "Pages/Game";
-import Home from "Pages/Home";
-import Result from "Pages/Result";
+import React from "react";
 import ResetStyle from "Styles/reset";
-import styled from "styled-components";
 import Header from "Components/Header";
-import { Context } from "Context";
+import MainContainer from "Containers/MainContainer";
 
 function App() {
-  const { state } = useContext(Context);
-  const { page } = state;
   return (
     <>
+      <ResetStyle />
       <Header />
-      <Main>
-        {page === "home" ? <Home /> : page === "game" ? <Game /> : <Result />}
-        <ResetStyle />
-      </Main>
+      <MainContainer />
     </>
   );
 }
 
 export default App;
-
-const Main = styled.main`
-  width: 100vw;
-  position: relative;
-`;

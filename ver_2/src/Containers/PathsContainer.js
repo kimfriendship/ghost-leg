@@ -28,7 +28,11 @@ const PathsContainer = ({ idx, canvasRef }) => {
   const STRAIGHT = "STRAIGHT";
   let direction = STRAIGHT;
 
-  const getFinalX = (newX) => gapX * (2 * newX + 1);
+  const getFinalX = (newX, direction) => {
+    let finalX = gapX * (2 * newX + 1);
+    finalX = direction === RIGHT ? finalX - 1 : finalX + 1;
+    return finalX;
+  };
 
   const drawFootprint = (X, Y) => {
     ctx.beginPath();
@@ -39,7 +43,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
   };
 
   const crossLeg = (direction) => {
-    const finalX = getFinalX(posX);
+    const finalX = getFinalX(posX, direction);
     const reachFinalRightX = direction === RIGHT && coordX >= finalX;
     const reachFinalLeftX = direction === LEFT && coordX <= finalX;
 
