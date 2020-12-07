@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/ghost-leg/static/js/main.290b03ac.chunk.js",
-    "main.js.map": "/ghost-leg/static/js/main.290b03ac.chunk.js.map",
+    "main.js": "/ghost-leg/static/js/main.5c323af2.chunk.js",
+    "main.js.map": "/ghost-leg/static/js/main.5c323af2.chunk.js.map",
     "runtime-main.js": "/ghost-leg/static/js/runtime-main.32a58868.js",
     "runtime-main.js.map": "/ghost-leg/static/js/runtime-main.32a58868.js.map",
     "static/js/2.1d8c589b.chunk.js": "/ghost-leg/static/js/2.1d8c589b.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.32a58868.js",
     "static/js/2.1d8c589b.chunk.js",
-    "static/js/main.290b03ac.chunk.js"
+    "static/js/main.5c323af2.chunk.js"
   ]
 }
