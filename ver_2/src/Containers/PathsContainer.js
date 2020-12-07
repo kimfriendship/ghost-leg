@@ -58,8 +58,6 @@ const PathsContainer = ({ idx, canvasRef }) => {
     if (coordY === canvasHeight) {
       clearInterval(draw);
       updateResult(idx, posX);
-      console.log(idx, "번째 플레이어 결과", posX);
-      console.log("=========");
       return;
     }
 

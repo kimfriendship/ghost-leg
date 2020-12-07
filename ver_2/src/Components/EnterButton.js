@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { lighten } from "polished";
 
 const EnterButton = ({ enterGame }) => {
   return (
@@ -12,7 +13,7 @@ const EnterButton = ({ enterGame }) => {
 export default EnterButton;
 
 const Button = styled.button`
-  background-color: rgb(255, 215, 139);
+  background-color: ${lighten(0.3, "orange")};
   font-size: 2.3rem;
   font-weight: 600;
   width: 30rem;
@@ -22,10 +23,15 @@ const Button = styled.button`
   border-radius: 10px;
   transition: 0.2s ease-in;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: white;
     background-color: orange;
     transition: 0.2s ease-in;
+  }
+
+  &:focus {
+    box-shadow: 0 0 1px 2px white, 0 0 1px 5px orange;
   }
 
   @media ${({ theme }) => theme.mobile} {

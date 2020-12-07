@@ -20,6 +20,7 @@ const Button = styled.button`
   transition: 0.2s ease-in;
   width: 14rem;
   text-align: right;
+  border-radius: 5px;
 
   &:hover {
     transition: 0.2s ease-in;
@@ -31,6 +32,10 @@ const Button = styled.button`
     width: 13rem;
     padding: 0.3rem;
     margin-bottom: 0.3rem;
+  }
+
+  &:focus {
+    box-shadow: 0 0 1px 2px white, 0 0 1px 5px darkslategrey;
   }
 `;
 

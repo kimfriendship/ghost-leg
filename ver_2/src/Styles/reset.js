@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const ResetStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
+  outline: none;
 }
 html,
 body,
@@ -139,11 +140,13 @@ button {
   border: none;
   padding: 0;
   margin: 0;
+  outline: none;
 }
 a {
   color: #222222;
   cursor: pointer;
   text-decoration: none;
+  outline: none;
 }
 .a11yHidden {
   position: absolute;

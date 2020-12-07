@@ -38,6 +38,12 @@ const HomeLink = styled.a`
   font-size: 3rem;
   font-weight: 700;
   line-height: 8rem;
+  padding: 1rem;
+  border-radius: 5px;
+
+  &:focus {
+    box-shadow: 0 0 1px 2px white, 0 0 1px 5px cornflowerblue;
+  }
 
   @media ${({ theme }) => theme.mobile} {
     font-size: 2rem;

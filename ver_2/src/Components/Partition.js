@@ -29,9 +29,14 @@ const StartButton = styled.button`
   border-radius: 10px;
   transition: 0.2s ease-in;
 
-  &:hover {
+  &:hover,
+  &:focus {
     transition: 0.2s ease-in;
     transform: scale(1.1);
+  }
+
+  &:focus {
+    box-shadow: 0 0 1px 2px white, 0 0 1px 5px orange;
   }
 
   @media ${({ theme }) => theme.mobile} {

@@ -3,7 +3,7 @@ export const initState = {
   playerCount: 2,
   players: [],
   cases: {},
-  results: 0,
+  results: {},
   gameState: "setting",
   legs: [],
 };
@@ -72,6 +72,7 @@ export const reducer = (state, action) => {
         ...state,
         page: "game",
         gameState: "setting",
+        results: {},
       };
     case "UPDATE_RESULT":
       return {

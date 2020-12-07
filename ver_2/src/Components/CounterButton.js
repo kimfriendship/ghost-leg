@@ -45,9 +45,17 @@ export default CounterButton;
 
 const Button = styled.button`
   font-size: 4rem;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 50%;
 
   &:disabled {
     cursor: not-allowed;
+  }
+
+  &:focus {
+    box-shadow: 0 0 1px 2px white, 0 0 1px 5px orange;
   }
 
   @media ${({ theme }) => theme.mobile} {

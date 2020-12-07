@@ -92,6 +92,10 @@ const CaseInput = styled.input`
     font-size: 1.6rem;
   }
 
+  &:focus {
+    box-shadow: 0 0 1px 2px white, 0 0 1px 5px cornflowerblue;
+  }
+
   @media ${({ theme }) => theme.mobile} {
     &::placeholder {
       font-size: 1.4rem;
