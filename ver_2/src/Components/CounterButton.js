@@ -41,7 +41,7 @@ const CounterButton = ({
   );
 };
 
-export default CounterButton;
+export default React.memo(CounterButton);
 
 const Button = styled.button`
   font-size: 4rem;

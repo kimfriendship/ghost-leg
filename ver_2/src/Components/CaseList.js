@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 
-const Case = ({ idx, value, gameState, inputCase, resultColor }) => {
+const Case = React.memo(({ idx, value, gameState, inputCase, resultColor }) => {
   return (
     <CaseWrapper>
       {["setting", "ready", "notReady"].includes(gameState) ? (
@@ -20,7 +20,7 @@ const Case = ({ idx, value, gameState, inputCase, resultColor }) => {
       )}
     </CaseWrapper>
   );
-};
+});
 
 const CaseList = ({
   players,

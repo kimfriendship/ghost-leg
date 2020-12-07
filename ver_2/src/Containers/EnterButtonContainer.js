@@ -12,4 +12,4 @@ const EnterButtonContainer = () => {
   );
 };
 
-export default EnterButtonContainer;
+export default React.memo(EnterButtonContainer);

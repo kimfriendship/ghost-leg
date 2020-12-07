@@ -18,4 +18,4 @@ const RestartButton = ({ gameState, page, goGame }) => {
   else return null;
 };
 
-export default RestartButton;
+export default React.memo(RestartButton);

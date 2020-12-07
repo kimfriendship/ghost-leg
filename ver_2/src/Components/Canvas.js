@@ -14,7 +14,7 @@ const Canvas = forwardRef((props, ref) => {
   );
 });
 
-export default Canvas;
+export default React.memo(Canvas);
 
 const Wrapper = styled.canvas`
   position: absolute;

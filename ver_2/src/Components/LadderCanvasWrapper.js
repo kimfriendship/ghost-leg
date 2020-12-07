@@ -1,4 +1,3 @@
-import LadderContainer from "Containers/LadderContainer";
 import React from "react";
 import styled from "styled-components";
 
@@ -6,11 +5,9 @@ const LadderCanvasWrapper = ({ children }) => {
   return <Wrapper>{children}</Wrapper>;
 };
 
-export default LadderCanvasWrapper;
+export default React.memo(LadderCanvasWrapper);
 
 const Wrapper = styled.div`
-  /* background-color: lightblue;
-  opacity: 0.4; */
   position: relative;
   width: 80%;
   height: 42rem;

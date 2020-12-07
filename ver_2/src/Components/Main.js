@@ -19,7 +19,7 @@ const Main = ({ page, gameState, children }) => {
   );
 };
 
-export default Main;
+export default React.memo(Main);
 
 const Wrapper = styled.main`
   width: 100vw;

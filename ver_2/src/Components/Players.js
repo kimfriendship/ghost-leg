@@ -13,7 +13,6 @@ const Players = ({ players }) => {
   );
 };
 
-// export default Players;
 export default React.memo(Players);
 
 const PlayerList = styled.ul`

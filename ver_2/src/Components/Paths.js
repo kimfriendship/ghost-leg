@@ -5,6 +5,6 @@ const Paths = () => {
   return <Canvas></Canvas>;
 };
 
-export default Paths;
+export default React.memo(Paths);
 
 const Canvas = styled.canvas``;

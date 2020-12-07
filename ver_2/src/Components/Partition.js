@@ -8,7 +8,11 @@ const Partition = ({ gameState, startGame }) => {
         {gameState === "setting" || gameState === "notReady" ? (
           <SettingMessage>케이스를 모두 입력해주세요</SettingMessage>
         ) : (
-          <StartButton aria-label="게임 시작" onClick={startGame}>
+          <StartButton
+            aria-label="게임 시작"
+            aria-live="assertive"
+            onClick={startGame}
+          >
             START
           </StartButton>
         )}

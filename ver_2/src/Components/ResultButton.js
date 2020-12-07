@@ -17,4 +17,4 @@ const ResultButton = ({ gameState, page, goResult }) => {
   else return null;
 };
 
-export default ResultButton;
+export default React.memo(ResultButton);

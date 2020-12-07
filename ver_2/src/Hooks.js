@@ -1,19 +1,25 @@
-import { useReducer } from "react";
+import { useReducer, useCallback } from "react";
 import { initState, reducer } from "Reducer";
 
 const useHook = () => {
   const [state, dispatch] = useReducer(reducer, initState);
 
-  const increasePlayers = () => dispatch({ type: "INCREASE_PLAYERS" });
-  const decreasePlayers = () => dispatch({ type: "DECREASE_PLAYERS" });
+  const increasePlayers = useCallback(
+    () => dispatch({ type: "INCREASE_PLAYERS" }),
+    []
+  );
+  const decreasePlayers = useCallback(
+    () => dispatch({ type: "DECREASE_PLAYERS" }),
+    []
+  );
 
-  const enterGame = () => dispatch({ type: "ENTER_GAME" });
-  const startGame = () => dispatch({ type: "START_GAME" });
+  const enterGame = useCallback(() => dispatch({ type: "ENTER_GAME" }), []);
+  const startGame = useCallback(() => dispatch({ type: "START_GAME" }), []);
 
-  const checkReady = (cases) => {
+  const checkReady = useCallback((cases) => {
     const isReady = Object.values(cases).every((value) => value.trim() !== "");
     dispatch({ type: "CHECK_READY", isReady });
-  };
+  }, []);
 
   const resetCase = (playerCount) => {
     const cases = {};
@@ -21,10 +27,10 @@ const useHook = () => {
     dispatch({ type: "RESET_CASE", cases });
   };
 
-  const inputCase = (e, idx) => {
+  const inputCase = useCallback((e, idx) => {
     const { value } = e.target;
     dispatch({ type: "INPUT_CASE", idx, value });
-  };
+  }, []);
 
   const getRandomNumber = (min, max) => {
     min = Math.ceil(min);
@@ -65,12 +71,14 @@ const useHook = () => {
     dispatch({ type: "GET_LEGS", legs });
   };
 
-  const goHome = () => dispatch({ type: "GO_HOME" });
-  const goResult = () => dispatch({ type: "GO_RESULT" });
-  const goGame = () => dispatch({ type: "GO_GAME" });
+  const goHome = useCallback(() => dispatch({ type: "GO_HOME" }), []);
+  const goResult = useCallback(() => dispatch({ type: "GO_RESULT" }), []);
+  const goGame = useCallback(() => dispatch({ type: "GO_GAME" }), []);
 
-  const updateResult = (idx, posX) =>
-    dispatch({ type: "UPDATE_RESULT", idx, posX });
+  const updateResult = useCallback(
+    (idx, posX) => dispatch({ type: "UPDATE_RESULT", idx, posX }),
+    []
+  );
 
   return {
     state,

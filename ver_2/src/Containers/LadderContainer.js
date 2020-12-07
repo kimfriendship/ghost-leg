@@ -27,4 +27,4 @@ const LadderContainer = () => {
   );
 };
 
-export default LadderContainer;
+export default React.memo(LadderContainer);

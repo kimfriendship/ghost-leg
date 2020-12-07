@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const LadderTable = ({ playerCount, legs, nth }) => {
+const LadderTable = React.memo(({ playerCount, legs, nth }) => {
   return (
     <Body
       playerCount={playerCount}
@@ -15,7 +15,7 @@ const LadderTable = ({ playerCount, legs, nth }) => {
       </Column>
     </Body>
   );
-};
+});
 
 const Ladder = ({ playerCount, legs }) => {
   return (
@@ -32,7 +32,7 @@ const Ladder = ({ playerCount, legs }) => {
   );
 };
 
-export default Ladder;
+export default React.memo(Ladder);
 
 const Body = styled.tbody`
   width: ${({ playerCount }) => `calc(100% / ${playerCount})`};

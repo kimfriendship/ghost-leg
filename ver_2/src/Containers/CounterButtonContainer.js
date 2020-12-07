@@ -15,4 +15,4 @@ const CounterButtonContainer = ({ direction }) => {
   );
 };
 
-export default CounterButtonContainer;
+export default React.memo(CounterButtonContainer);

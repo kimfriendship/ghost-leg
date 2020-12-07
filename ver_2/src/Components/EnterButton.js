@@ -10,7 +10,7 @@ const EnterButton = ({ enterGame }) => {
   );
 };
 
-export default EnterButton;
+export default React.memo(EnterButton);
 
 const Button = styled.button`
   background-color: ${lighten(0.3, "orange")};
