@@ -50,6 +50,7 @@ const Image = styled.img`
   object-fit: cover;
 
   @media ${({ theme }) => theme.mobile} {
+    max-width: 6rem;
     width: 30%;
   }
 `;
