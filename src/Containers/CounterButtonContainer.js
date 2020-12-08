@@ -3,13 +3,13 @@ import { Context } from "Context";
 import CounterButton from "Components/CounterButton";
 
 const CounterButtonContainer = ({ direction }) => {
-  const { increasePlayers, decreasePlayers, state } = useContext(Context);
+  const { incPlayers, decPlayers, state } = useContext(Context);
 
   return (
     <CounterButton
       playerCount={state.playerCount}
-      increasePlayers={increasePlayers}
-      decreasePlayers={decreasePlayers}
+      incPlayers={incPlayers}
+      decPlayers={decPlayers}
       direction={direction}
     />
   );

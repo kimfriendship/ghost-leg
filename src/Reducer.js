@@ -10,12 +10,12 @@ export const initState = {
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case "INCREASE_PLAYERS":
+    case "INC_PLAYERS":
       return {
         ...state,
         playerCount: state.playerCount + 1,
       };
-    case "DECREASE_PLAYERS":
+    case "DEC_PLAYERS":
       return {
         ...state,
         playerCount: state.playerCount - 1,

@@ -4,14 +4,8 @@ import { initState, reducer } from "Reducer";
 const useHook = () => {
   const [state, dispatch] = useReducer(reducer, initState);
 
-  const increasePlayers = useCallback(
-    () => dispatch({ type: "INCREASE_PLAYERS" }),
-    []
-  );
-  const decreasePlayers = useCallback(
-    () => dispatch({ type: "DECREASE_PLAYERS" }),
-    []
-  );
+  const incPlayers = useCallback(() => dispatch({ type: "INC_PLAYERS" }), []);
+  const decPlayers = useCallback(() => dispatch({ type: "DEC_PLAYERS" }), []);
 
   const enterGame = useCallback(() => dispatch({ type: "ENTER_GAME" }), []);
   const startGame = useCallback(() => dispatch({ type: "START_GAME" }), []);
@@ -75,15 +69,13 @@ const useHook = () => {
   const goResult = useCallback(() => dispatch({ type: "GO_RESULT" }), []);
   const goGame = useCallback(() => dispatch({ type: "GO_GAME" }), []);
 
-  const updateResult = useCallback(
-    (idx, posX) => dispatch({ type: "UPDATE_RESULT", idx, posX }),
-    []
-  );
+  const updateResult = (idx, posX) =>
+    dispatch({ type: "UPDATE_RESULT", idx, posX });
 
   return {
     state,
-    increasePlayers,
-    decreasePlayers,
+    incPlayers,
+    decPlayers,
     enterGame,
     startGame,
     checkReady,

@@ -74,8 +74,9 @@ const CaseListWrapper = styled.ul`
 `;
 
 const CaseWrapper = styled.li`
-  width: ${({ playerCount }) => (playerCount < 4 ? "30%" : "20%")};
+  flex-basis: ${({ playerCount }) => (playerCount < 4 ? "30%" : "20%")};
   padding: 0 0.5%;
+  min-width: 0;
 `;
 
 const caseStyle = css`

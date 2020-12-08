@@ -6,8 +6,8 @@ export const Context = React.createContext(null);
 export const Provider = ({ children }) => {
   const {
     state,
-    increasePlayers,
-    decreasePlayers,
+    incPlayers,
+    decPlayers,
     enterGame,
     startGame,
     checkReady,
@@ -23,8 +23,8 @@ export const Provider = ({ children }) => {
 
   const contextValue = {
     state,
-    increasePlayers,
-    decreasePlayers,
+    incPlayers,
+    decPlayers,
     enterGame,
     startGame,
     checkReady,

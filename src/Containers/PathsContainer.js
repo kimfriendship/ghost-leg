@@ -7,26 +7,26 @@ const PathsContainer = ({ idx, canvasRef }) => {
   const { state, updateResult } = useContext(Context);
   const { legs, players, playerCount } = state;
   const [canvas, setCanvas] = useState(null);
-  let draw = null;
-  let posX = idx;
-  let posY = 0;
-  let isCrossing = false;
-
   const ctx = canvas && canvas.getContext("2d");
+  const device = window.innerWidth > 812 ? "pc" : "mobile";
+  const radius = device === "pc" ? 2 : 1.5;
+  ctx && ctx.scale(2, 2);
+
   const canvasWidth = canvas && canvas.width;
   const canvasHeight = canvas && canvas.height;
-  const viewPort = window.innerWidth > 812 ? "pc" : "mobile";
-  const radius = viewPort === "pc" ? 2 : 1.5;
-  const move = 1;
   const gapX = canvasWidth / (playerCount * 2);
   const gapY = canvasHeight / 10;
-  let coordX = gapX * (2 * idx + 1);
-  let coordY = 0;
-
+  const move = 1;
   const RIGHT = "RIGHT";
   const LEFT = "LEFT";
   const STRAIGHT = "STRAIGHT";
   let direction = STRAIGHT;
+  let coordX = gapX * (2 * idx + 1);
+  let coordY = 0;
+  let draw = null;
+  let posX = idx;
+  let posY = 0;
+  let isCrossing = false;
 
   const getFinalX = (newX, direction) => {
     let finalX = gapX * (2 * newX + 1);
@@ -36,7 +36,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
 
   const drawFootprint = (X, Y) => {
     ctx.beginPath();
-    ctx.arc(X, Y, radius, 0, Math.PI * 10);
+    ctx.arc(X, Y, radius, 0, Math.PI * 2);
     ctx.fillStyle = players[idx].color;
     ctx.fill();
     ctx.closePath();
