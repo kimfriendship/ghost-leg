@@ -66,6 +66,7 @@ const Case = styled.span`
   padding: 0 1rem;
   margin-left: 2rem;
   border-radius: 5px;
+  text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

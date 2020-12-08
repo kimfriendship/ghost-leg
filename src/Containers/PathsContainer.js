@@ -8,10 +8,10 @@ const PathsContainer = ({ idx, canvasRef }) => {
   const { legs, players, playerCount } = state;
   const [canvas, setCanvas] = useState(null);
   const ctx = canvas && canvas.getContext("2d");
+  // canvas && ctx.scale(2, 2);
+
   const device = window.innerWidth > 812 ? "pc" : "mobile";
   const radius = device === "pc" ? 2 : 1.5;
-  ctx && ctx.scale(2, 2);
-
   const canvasWidth = canvas && canvas.width;
   const canvasHeight = canvas && canvas.height;
   const gapX = canvasWidth / (playerCount * 2);
