@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import A11yTitle from "./A11yTitle";
 
 const Main = ({ page, gameState, children }) => {
   let header = page === "home" && "홈페이지: 플레이어 수 설정";
@@ -11,9 +12,7 @@ const Main = ({ page, gameState, children }) => {
 
   return (
     <Wrapper>
-      {page !== "result" && (
-        <SubHeader className="a11yHidden">{header}</SubHeader>
-      )}
+      {page !== "result" && <A11yTitle element="h2" text={header} />}
       {children}
     </Wrapper>
   );
@@ -26,5 +25,3 @@ const Wrapper = styled.main`
   height: 80vh;
   position: relative;
 `;
-
-const SubHeader = styled.h2``;

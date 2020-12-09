@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import A11yTitle from "./A11yTitle";
 
 const Players = ({ players }) => {
   return (
-    <PlayerList>
-      {players.map(({ id, name, src }) => (
-        <Player key={id}>
-          <PlayerImg src={src} alt={`${name} 플레이어`} />
-        </Player>
-      ))}
-    </PlayerList>
+    <>
+      <A11yTitle element="h3" text="플레이어 목록" />
+      <PlayerList>
+        {players.map(({ id, name, src }) => (
+          <Player key={id}>
+            <PlayerImg src={src} alt={`${name} 플레이어`} />
+          </Player>
+        ))}
+      </PlayerList>
+    </>
   );
 };
 

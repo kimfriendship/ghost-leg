@@ -1,25 +1,29 @@
 import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
+import A11yTitle from "./A11yTitle";
 
 const Case = React.memo(
   ({ idx, value, gameState, inputCase, resultColor, playerCount }) => {
     return (
-      <CaseWrapper playerCount={playerCount}>
-        {["setting", "ready", "notReady"].includes(gameState) ? (
-          <CaseInput
-            type="text"
-            aria-label={`case ${idx + 1}`}
-            placeholder={`case ${idx + 1}`}
-            gameState={gameState}
-            onChange={(e) => inputCase(e, idx)}
-            value={value}
-            tabIndex={idx + 2}
-            autoFocus={!idx}
-          />
-        ) : (
-          <CaseBox resultColor={resultColor}>{value}</CaseBox>
-        )}
-      </CaseWrapper>
+      <>
+        <A11yTitle element="h3" text="케이스 입력 필드 리스트" />
+        <CaseWrapper playerCount={playerCount}>
+          {["setting", "ready", "notReady"].includes(gameState) ? (
+            <CaseInput
+              type="text"
+              aria-label={`case ${idx + 1}`}
+              placeholder={`case ${idx + 1}`}
+              gameState={gameState}
+              onChange={(e) => inputCase(e, idx)}
+              value={value}
+              tabIndex={idx + 2}
+              autoFocus={!idx}
+            />
+          ) : (
+            <CaseBox resultColor={resultColor}>{value}</CaseBox>
+          )}
+        </CaseWrapper>
+      </>
     );
   }
 );
