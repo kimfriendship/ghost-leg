@@ -22,7 +22,7 @@ export default Header;
 const HeaderWrapper = styled.div`
   height: 8rem;
   width: 100vw;
-  background-color: cornflowerblue;
+  background-color: #577dc4;
 
   @media ${({ theme }) => theme.mobile} {
     height: 6rem;
@@ -41,8 +41,8 @@ const HeaderTitle = styled.h1`
 
 const HomeLink = styled.a`
   color: white;
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.8rem;
+  font-weight: 600;
   line-height: 8rem;
   padding: 1rem;
   border-radius: 5px;
@@ -53,7 +53,7 @@ const HomeLink = styled.a`
 
   @media ${({ theme }) => theme.mobile} {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 6rem;
   }
 `;

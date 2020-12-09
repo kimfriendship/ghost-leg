@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { lighten } from "polished";
 
 const EnterButton = ({ enterGame }) => {
   return (
@@ -13,7 +12,7 @@ const EnterButton = ({ enterGame }) => {
 export default React.memo(EnterButton);
 
 const Button = styled.button`
-  background-color: ${lighten(0.3, "orange")};
+  background-color: #ffdb99;
   font-size: 2.3rem;
   font-weight: 600;
   width: 30rem;

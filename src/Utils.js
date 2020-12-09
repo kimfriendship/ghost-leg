@@ -5,15 +5,12 @@ const resetCase = (playerCount) => {
 };
 
 const getRandomNumber = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
 const getRandomPlayers = (playerCount, data) => {
   const players = new Set();
   while (players.size < playerCount) players.add(data[getRandomNumber(0, 10)]);
-  console.log(players);
   return [...players];
 };
 

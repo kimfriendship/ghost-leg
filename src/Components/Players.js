@@ -1,14 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import styled from "styled-components";
 import A11yTitle from "./A11yTitle";
 
 const Players = ({ players }) => {
+  const height = (window.innerHeight * 0.8) / players.length;
   return (
     <>
       <A11yTitle element="h3" text="플레이어 목록" />
-      <PlayerList>
+      <PlayerList height={height}>
         {players.map(({ id, name, src }) => (
-          <Player key={id}>
+          <Player key={id} height={height}>
             <PlayerImg src={src} alt={`${name} 플레이어`} />
           </Player>
         ))}
@@ -24,17 +26,19 @@ const PlayerList = styled.ul`
   flex-direction: row;
   justify-content: space-around;
   margin: 0 auto;
-  padding-top: 8rem;
+  margin-top: 8rem;
   width: 80%;
+  height: ${({ height }) => height};
 
   @media ${({ theme }) => theme.mobile} {
     width: 100%;
-    padding-top: 7rem;
+    margin-top: 7rem;
   }
 `;
 
 const Player = styled.li`
   width: 20%;
+  height: ${({ height }) => height};
 `;
 
 const PlayerImg = styled.img`

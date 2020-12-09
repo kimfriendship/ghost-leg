@@ -43,6 +43,7 @@ function App() {
     dispatch({ type: "CHANGE_PAGE", page: "game" });
     getProfiles(players);
     getLegs();
+    console.log("함수 호출 ");
   };
 
   const goBackBtn = () => {
@@ -75,6 +76,7 @@ function App() {
       type: "GET_PROFILES",
       profiles: array.map((index) => data[index]),
     });
+    console.log("디스패치 날림");
   };
 
   const getInputs = ({ target }) => {

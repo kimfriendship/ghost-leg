@@ -7,8 +7,8 @@ const useHook = () => {
   const incPlayers = useCallback(() => dispatch({ type: "INC_PLAYERS" }), []);
   const decPlayers = useCallback(() => dispatch({ type: "DEC_PLAYERS" }), []);
 
-  const startGame = useCallback(() => dispatch({ type: "START_GAME" }), []);
   const enterGame = useCallback(() => dispatch({ type: "ENTER_GAME" }), []);
+  const startGame = useCallback(() => dispatch({ type: "START_GAME" }), []);
 
   const checkReady = useCallback((cases) => {
     const isReady = Object.values(cases).every((value) => value.trim() !== "");
