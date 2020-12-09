@@ -1,10 +1,12 @@
+import { resetCase, getRandomLegs, getRandomPlayers } from "Utils";
+
 export const initState = {
   page: "home",
   playerCount: 2,
   players: [],
   cases: {},
   results: {},
-  gameState: "setting",
+  gameState: "notReady",
   legs: [],
 };
 
@@ -24,16 +26,14 @@ export const reducer = (state, action) => {
       return {
         ...state,
         page: "game",
+        players: getRandomPlayers(state.playerCount, data),
+        cases: resetCase(state.playerCount),
+        legs: getRandomLegs(state.playerCount),
       };
     case "START_GAME":
       return {
         ...state,
         gameState: "playing",
-      };
-    case "RESET_CASE":
-      return {
-        ...state,
-        cases: action.cases,
       };
     case "INPUT_CASE":
       return {
@@ -45,34 +45,27 @@ export const reducer = (state, action) => {
         ...state,
         gameState: action.isReady ? "ready" : "notReady",
       };
-    case "GET_PLAYERS":
-      return {
-        ...state,
-        players: action.players,
-      };
-    case "GET_LEGS":
-      return {
-        ...state,
-        legs: action.legs,
-      };
     case "GO_HOME":
       return {
         ...state,
         page: "home",
-        gameState: "setting",
+        gameState: "notReady",
       };
     case "GO_RESULT":
       return {
         ...state,
         page: "result",
-        gameState: "setting",
+        gameState: "notReady",
       };
     case "GO_GAME":
       return {
         ...state,
         page: "game",
-        gameState: "setting",
+        gameState: "notReady",
         results: {},
+        players: getRandomPlayers(state.playerCount, data),
+        cases: resetCase(state.playerCount),
+        legs: getRandomLegs(state.playerCount),
       };
     case "UPDATE_RESULT":
       return {

@@ -1,17 +1,13 @@
 import Ladder from "Components/Ladder";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Context } from "Context";
 import Partition from "Components/Partition";
 import CanvasContainer from "./CanvasContainer";
 import LadderCanvasWrapper from "Components/LadderCanvasWrapper";
 
 const LadderContainer = () => {
-  const { state, startGame, getRandomLegs } = useContext(Context);
+  const { state, startGame } = useContext(Context);
   const { legs, playerCount, gameState } = state;
-
-  useEffect(() => {
-    if (gameState === "setting") getRandomLegs(playerCount);
-  }, [gameState]);
 
   return (
     <>

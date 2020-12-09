@@ -64,7 +64,7 @@ const CaseList = ({
   );
 };
 
-export default CaseList;
+export default React.memo(CaseList);
 
 const CaseListWrapper = styled.ul`
   display: flex;

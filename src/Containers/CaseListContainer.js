@@ -1,14 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Context } from "Context";
 import CaseList from "Components/CaseList";
 
 const CaseListContainer = () => {
-  const { state, checkReady, resetCase, inputCase } = useContext(Context);
+  const { state, checkReady, inputCase } = useContext(Context);
   const { players, playerCount, cases, gameState, results } = state;
-
-  useEffect(() => {
-    if (gameState === "setting") resetCase(playerCount);
-  }, [gameState]);
 
   return (
     <CaseList
@@ -23,4 +19,4 @@ const CaseListContainer = () => {
   );
 };
 
-export default CaseListContainer;
+export default React.memo(CaseListContainer);

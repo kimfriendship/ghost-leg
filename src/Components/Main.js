@@ -3,16 +3,16 @@ import styled from "styled-components";
 import A11yTitle from "./A11yTitle";
 
 const Main = ({ page, gameState, children }) => {
-  let header = page === "home" && "홈페이지: 플레이어 수 설정";
+  let text = page === "home" && "홈페이지: 플레이어 수 설정";
   if (page === "game")
-    header =
+    text =
       gameState === "playing" || gameState === "done"
         ? "게임 페이지: 사다리 타기"
         : "게임 페이지: 케이스 설정";
 
   return (
     <Wrapper>
-      {page !== "result" && <A11yTitle element="h2" text={header} />}
+      {page !== "result" && <A11yTitle element="h2" text={text} />}
       {children}
     </Wrapper>
   );

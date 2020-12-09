@@ -1,6 +1,6 @@
 import React from "react";
 
-const A11yTitle = (element, text) => {
+const A11yTitle = ({ element, text }) => {
   return (
     <>
       {element === "h2" ? (
@@ -12,4 +12,4 @@ const A11yTitle = (element, text) => {
   );
 };
 
-export default A11yTitle;
+export default React.memo(A11yTitle);
