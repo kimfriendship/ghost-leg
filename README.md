@@ -11,7 +11,6 @@
 ![ghost-leg_playing_image](https://user-images.githubusercontent.com/60292183/101502329-2bff9a00-39b4-11eb-89f0-fe987a9472d8.gif)
 
 <br>
-<br>
 
 ## 프로젝트 핵심 목표
 
@@ -28,7 +27,6 @@
 - 캔버스를 활용하여 사다리 경로를 그리기 기능 구현
 
 <br>
-<br>
 
 ## 사용 기술
 
@@ -40,8 +38,8 @@
 - CSS (version 1)
 
 <br>
-<br>
 
 ## 기타 사항
 
+- 웹 접근성 체크리스트는 [a11y-check-list.md](https://github.com/kimfriendship/ghost-leg/blob/master/a11y-check-list.md)에서 확인 가능합니다.
 - 레포지토리가 변동 됨에 따라 version1의 [commit history](https://github.com/kimfriendship/study-react/commits/master?after=a8c490198ad5f871558779464494383b73923266+34)는 링크에서 별도로 확인 가능합니다.
