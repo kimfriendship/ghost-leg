@@ -2,7 +2,7 @@
 
 ## v2.1.0
 
-2020년 12월 02일 - 2020년 12월 07일  
+2020년 12월 02일 - 2020년 12월 08일  
 리액트로 사다리 타기 게임을 구현한 개인 프로젝트입니다.  
 [kimfriendship.github.io/ghost-leg/](https://kimfriendship.github.io/ghost-leg/)에서 확인 할 수 있습니다.
 

@@ -24,4 +24,5 @@ const Wrapper = styled.canvas`
   width: 100%;
   height: 100%;
   background-color: pink;
+  opacity: 0.5;
 `;

@@ -27,6 +27,8 @@ const PathsContainer = ({ idx, canvasRef }) => {
   let posX = idx;
   let posY = 0;
 
+  console.log(players[idx].name, canvasWidth, coordX);
+
   const getFinalX = (newX, direction) => {
     let finalX = gapX * (2 * newX + 1);
     finalX = direction === RIGHT ? finalX - 1 : finalX + 1;
