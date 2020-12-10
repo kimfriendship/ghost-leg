@@ -6,11 +6,12 @@ const Canvas = forwardRef((props, ref) => {
   const { playerCount, ladderPos } = props;
 
   return (
-    <Wrapper ref={ref} top={ladderPos}>
+    <>
+      <Wrapper ref={ref} top={ladderPos}></Wrapper>
       {Array.from({ length: playerCount }).map((_, idx) => (
         <PathsContainer key={idx} idx={idx} canvasRef={ref} />
       ))}
-    </Wrapper>
+    </>
   );
 });
 
@@ -22,4 +23,5 @@ const Wrapper = styled.canvas`
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: pink;
 `;

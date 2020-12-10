@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/ghost-leg/static/js/main.595522dd.chunk.js",
+    "main.js.map": "/ghost-leg/static/js/main.595522dd.chunk.js.map",
+    "runtime-main.js": "/ghost-leg/static/js/runtime-main.32a58868.js",
+    "runtime-main.js.map": "/ghost-leg/static/js/runtime-main.32a58868.js.map",
+    "static/js/2.9ef05170.chunk.js": "/ghost-leg/static/js/2.9ef05170.chunk.js",
+    "static/js/2.9ef05170.chunk.js.map": "/ghost-leg/static/js/2.9ef05170.chunk.js.map",
+    "index.html": "/ghost-leg/index.html",
+    "static/js/2.9ef05170.chunk.js.LICENSE.txt": "/ghost-leg/static/js/2.9ef05170.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.32a58868.js",
+    "static/js/2.9ef05170.chunk.js",
+    "static/js/main.595522dd.chunk.js"
+  ]
+}

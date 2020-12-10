@@ -8,7 +8,6 @@ const PathsContainer = ({ idx, canvasRef }) => {
   const { legs, players, playerCount } = state;
   const [canvas, setCanvas] = useState(null);
   const ctx = canvas && canvas.getContext("2d");
-  // canvas && ctx.scale(2, 2);
 
   const device = window.innerWidth > 812 ? "pc" : "mobile";
   const radius = device === "pc" ? 2 : 1.5;
@@ -21,12 +20,12 @@ const PathsContainer = ({ idx, canvasRef }) => {
   const LEFT = "LEFT";
   const STRAIGHT = "STRAIGHT";
   let direction = STRAIGHT;
+  let isCrossing = false;
+  let draw = null;
   let coordX = gapX * (2 * idx + 1);
   let coordY = 0;
-  let draw = null;
   let posX = idx;
   let posY = 0;
-  let isCrossing = false;
 
   const getFinalX = (newX, direction) => {
     let finalX = gapX * (2 * newX + 1);
@@ -89,7 +88,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
     return () => clearInterval(draw);
   }, [canvasRef, canvas]);
 
-  return <Paths />;
+  return <Paths player={players[idx]} coords={[coordX, coordY]} />;
 };
 
 export default PathsContainer;
