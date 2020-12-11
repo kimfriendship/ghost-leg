@@ -6,6 +6,7 @@ import CanvasContainer from "./CanvasContainer";
 import LadderCanvasWrapper from "Components/LadderCanvasWrapper";
 
 const LadderContainer = () => {
+  // console.log("ladder container rendering");
   const { state, startGame } = useContext(Context);
   const { legs, playerCount, gameState } = state;
 

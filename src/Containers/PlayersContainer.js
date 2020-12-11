@@ -5,6 +5,10 @@ import { Context } from "Context";
 const PlayersContainer = () => {
   const { state } = useContext(Context);
   const { players } = state;
+  // console.log(
+  //   "playersContainer rendering",
+  //   players.map((p) => p.name)
+  // );
 
   return <Players players={players} />;
 };

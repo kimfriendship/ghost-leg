@@ -10,12 +10,11 @@ const PathsContainer = ({ idx, canvasRef }) => {
   const ctx = canvas && canvas.getContext("2d");
 
   const device = window.innerWidth > 812 ? "pc" : "mobile";
-  const radius = device === "pc" ? 2 : 1.5;
+  const radius = device === "pc" ? 5 : 3;
   const canvasWidth = canvas && canvas.width;
   const canvasHeight = canvas && canvas.height;
   const gapX = canvasWidth / (playerCount * 2);
   const gapY = canvasHeight / 10;
-  const move = 1;
   const RIGHT = "RIGHT";
   const LEFT = "LEFT";
   const STRAIGHT = "STRAIGHT";
@@ -27,7 +26,18 @@ const PathsContainer = ({ idx, canvasRef }) => {
   let posX = idx;
   let posY = 0;
 
-  console.log(players[idx].name, canvasWidth, coordX);
+  const getMoveSize = () => {
+    let divisor = 2;
+    while (divisor < gapY) {
+      if (gapY % divisor === 0) break;
+      divisor++;
+    }
+    return divisor < radius ? 1 : divisor;
+  };
+
+  const move = getMoveSize();
+
+  // console.log(players[idx].name, gapY, move);
 
   const getFinalX = (newX, direction) => {
     let finalX = gapX * (2 * newX + 1);
@@ -85,7 +95,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
 
   useEffect(() => {
     setCanvas(canvasRef.current);
-    if (canvas) draw = setInterval(() => drawPath(), 5);
+    if (canvas) draw = setInterval(() => drawPath(), 1);
 
     return () => clearInterval(draw);
   }, [canvasRef, canvas]);

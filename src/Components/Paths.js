@@ -2,15 +2,17 @@ import React from "react";
 import styled from "styled-components";
 
 const Paths = ({ player, coords }) => {
-  console.log(player.name, coords);
+  // console.log(player.name, coords);
   return (
-    <Image
-      src={player.src}
-      alt={`${player.name} 사다리 타고 내려가는 중`}
-      color={player.color}
-      x={coords[0]}
-      y={coords[1]}
-    />
+    <>
+      <Image
+        src={player.src}
+        alt={`${player.name} 사다리 타고 내려가는 중`}
+        color={player.color}
+        x={coords[0]}
+        y={coords[1]}
+      />
+    </>
   );
 };
 
@@ -24,6 +26,6 @@ const Image = styled.img`
   border: ${({ color }) => `3px solid ${color}`};
   border-radius: 50%;
   position: absolute;
-  top: ${({ y }) => y};
-  left: ${({ x }) => x * 10};
+  top: ${({ y }) => `${y}px`};
+  left: ${({ x }) => `${x}px`};
 `;

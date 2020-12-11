@@ -5,6 +5,10 @@ import A11yTitle from "./A11yTitle";
 
 const Players = ({ players }) => {
   const height = (window.innerHeight * 0.8) / players.length;
+  // console.log(
+  //   "players rendering",
+  //   players.map((p) => p.name)
+  // );
   return (
     <>
       <A11yTitle element="h3" text="플레이어 목록" />

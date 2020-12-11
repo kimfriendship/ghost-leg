@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import PathsContainer from "Containers/PathsContainer";
 import React, { forwardRef } from "react";
 import styled from "styled-components";
@@ -7,7 +8,12 @@ const Canvas = forwardRef((props, ref) => {
 
   return (
     <>
-      <Wrapper ref={ref} top={ladderPos}></Wrapper>
+      <Wrapper
+        ref={ref}
+        top={ladderPos}
+        width={window.innerWidth * 0.8}
+        height="300"
+      />
       {Array.from({ length: playerCount }).map((_, idx) => (
         <PathsContainer key={idx} idx={idx} canvasRef={ref} />
       ))}
@@ -23,6 +29,6 @@ const Wrapper = styled.canvas`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: pink;
-  opacity: 0.5;
+  /* background-color: pink;
+  opacity: 0.5; */
 `;
