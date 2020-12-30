@@ -10,11 +10,11 @@ const PathsContainer = ({ idx, canvasRef }) => {
   const ctx = canvas && canvas.getContext("2d");
 
   const device = window.innerWidth > 812 ? "pc" : "mobile";
-  const radius = device === "pc" ? 5 : 3;
+  const size = device === "pc" ? 8 : 5;
   const canvasWidth = canvas && canvas.width;
   const canvasHeight = canvas && canvas.height;
   const gapX = canvasWidth / (playerCount * 2);
-  const gapY = canvasHeight / 10;
+  const gapY = Math.floor(canvasHeight / 10);
   const RIGHT = "RIGHT";
   const LEFT = "LEFT";
   const STRAIGHT = "STRAIGHT";
@@ -24,20 +24,21 @@ const PathsContainer = ({ idx, canvasRef }) => {
   let coordX = gapX * (2 * idx + 1);
   let coordY = 0;
   let posX = idx;
-  let posY = 0;
+  let posY = -size;
+
+  // console.log(players[idx].name, "최초 지점", coordX);
 
   const getMoveSize = () => {
     let divisor = 2;
     while (divisor < gapY) {
+      console.log(gapX, gapY, divisor);
       if (gapY % divisor === 0) break;
       divisor++;
     }
-    return divisor < radius ? 1 : divisor;
+    return 1;
   };
 
   const move = getMoveSize();
-
-  // console.log(players[idx].name, gapY, move);
 
   const getFinalX = (newX, direction) => {
     let finalX = gapX * (2 * newX + 1);
@@ -47,7 +48,8 @@ const PathsContainer = ({ idx, canvasRef }) => {
 
   const drawFootprint = (X, Y) => {
     ctx.beginPath();
-    ctx.arc(X, Y, radius, 0, Math.PI * 2);
+    // ctx.arc(X, Y, radius, 0, Math.PI * 2);
+    ctx.rect(X - 3, Y, size, size);
     ctx.fillStyle = players[idx].color;
     ctx.fill();
     ctx.closePath();
@@ -55,6 +57,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
 
   const crossLeg = (direction) => {
     const finalX = getFinalX(posX, direction);
+    // console.log("crossing legs", players[idx].name, finalX, coordX);
     const reachFinalRightX = direction === RIGHT && coordX >= finalX;
     const reachFinalLeftX = direction === LEFT && coordX <= finalX;
 
