@@ -10,7 +10,7 @@ const PathsContainer = ({ idx, canvasRef }) => {
   const ctx = canvas && canvas.getContext("2d");
 
   const device = window.innerWidth > 812 ? "pc" : "mobile";
-  const size = device === "pc" ? 8 : 5;
+  const size = device === "pc" ? 5 : 2;
   const canvasWidth = canvas && canvas.width;
   const canvasHeight = canvas && canvas.height;
   const gapX = canvasWidth / (playerCount * 2);
@@ -22,23 +22,24 @@ const PathsContainer = ({ idx, canvasRef }) => {
   let isCrossing = false;
   let draw = null;
   let coordX = gapX * (2 * idx + 1);
-  let coordY = 0;
+  let coordY = -3;
   let posX = idx;
-  let posY = -size;
+  let posY = 0;
+  const move = 1;
 
   // console.log(players[idx].name, "최초 지점", coordX);
 
-  const getMoveSize = () => {
-    let divisor = 2;
-    while (divisor < gapY) {
-      console.log(gapX, gapY, divisor);
-      if (gapY % divisor === 0) break;
-      divisor++;
-    }
-    return 1;
-  };
+  // const getMoveSize = () => {
+  //   let divisor = 2;
+  //   while (divisor < gapY) {
+  //     console.log(gapX, gapY, divisor);
+  //     if (gapY % divisor === 0) break;
+  //     divisor++;
+  //   }
+  //   return 1;
+  // };
 
-  const move = getMoveSize();
+  // const move = getMoveSize();
 
   const getFinalX = (newX, direction) => {
     let finalX = gapX * (2 * newX + 1);
@@ -48,8 +49,8 @@ const PathsContainer = ({ idx, canvasRef }) => {
 
   const drawFootprint = (X, Y) => {
     ctx.beginPath();
-    // ctx.arc(X, Y, radius, 0, Math.PI * 2);
-    ctx.rect(X - 3, Y, size, size);
+    ctx.arc(X, Y, size, 0, Math.PI * 2);
+    // ctx.rect(X - 3, Y, size, size);
     ctx.fillStyle = players[idx].color;
     ctx.fill();
     ctx.closePath();
